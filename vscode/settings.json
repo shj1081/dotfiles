@@ -1,5 +1,16 @@
 {
+    // theme
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "GitHub Dark",
-    "markdown-preview-enhanced.previewTheme": "github-dark.css"
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+
+    // settings
+    "editor.formatOnSave": true,
+    "editor.fontSize": 12,
+    "editor.fontFamily": "JetBrains Mono",
+
+    // prettier settings
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true
 }
