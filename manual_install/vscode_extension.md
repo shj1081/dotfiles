@@ -7,3 +7,4 @@ Material Icon Theme
 LaTex
 GitHub Copilot
 diff
+todo highlight
