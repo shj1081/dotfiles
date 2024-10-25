@@ -17,7 +17,7 @@ use symlinks for better management of dotfiles
 - keybindings
 - settings
 
-## `.zshrc`
+## .zshrc
 
 ## BrewFile
 
