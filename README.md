@@ -19,6 +19,8 @@ use symlinks for better management of dotfiles
 
 ## .zshrc
 
+- z shell config, alias, functions
+
 ## BrewFile
 
 auto install formulae and cask \
