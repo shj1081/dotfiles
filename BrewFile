@@ -1,0 +1,37 @@
+# pandoc for convert markdown to pdf
+brew "pandoc"
+cask "mactex"
+brew "pandoc-crossref"
+
+# Cross-platform make
+brew "cmake"
+
+# A better cd command
+brew "zoxide"
+
+# fzf - fuzzy finder
+brew "fzf"
+
+# JAVA sdk
+brew "openjdk@17"
+brew "openjdk@11"
+
+# docker
+cask "docker"
+
+# DBMS
+brew "mysql"
+brew "postgresql@14"
+
+# File browser in terminal
+brew "ranger"
+
+# ls replacement
+brew "lsd"
+
+# apps
+cask "spotify"
+cask "visual-studio-code"
+cask "karabiner-elements"
+cask "warp"
+cask "raycast"

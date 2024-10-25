@@ -1,0 +1,55 @@
+[
+  // toggle sidebar
+  {
+    "key": "ctrl+e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    }
+  },
+  // Create new files and folders
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // toggle terminal pane
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+
+  // toggle markdown preview
+  {
+    "key": "ctrl+p",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "markdown.showPreviewToSide"
+      ]
+    }
+  },
+
+  // open file in new window
+  {
+    "key": "enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+  },
+  // rename file
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  }
+  
+  
+]

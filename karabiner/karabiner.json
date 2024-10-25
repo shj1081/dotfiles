@@ -1,0 +1,708 @@
+{
+    "global": {
+    "ask_for_confirmation_before_quitting": true,
+    "check_for_updates_on_startup": false,
+    "show_in_menu_bar": false,
+    "show_profile_name_in_menu_bar": false,
+    "unsafe_ui": false
+  },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 200,
+                    "basic.to_if_held_down_threshold_milliseconds": 200,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+                    {
+                      "description": "right cmd to f18",
+                      "manipulators": [
+                        {
+                          "from": {
+                              "key_code": "right_command",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "f18"
+                              }
+                            ],
+                            "type": "basic"
+                        }
+                      ]
+                    },                    
+                    {
+                        "description": "Remap Tab to window_hyper key when held, Tab when tapped",
+                        "manipulators": [
+                          {
+                            "from": {
+                              "key_code": "tab"
+                            },
+                            "to": [
+                              {
+                                "set_variable": {
+                                  "name": "window_hyper",
+                                  "value": 1
+                                }
+                              }
+                            ],
+                            "to_after_key_up": [
+                              {
+                                "set_variable": {
+                                  "name": "window_hyper",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "to_if_alone": [
+                              {
+                                "key_code": "tab"
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                        ]
+                      },
+                      {
+                        "description": "window_Hyper Key layer",
+                        "manipulators": [
+
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "window half left",
+                            "from": {
+                              "key_code": "j",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -g raycast://extensions/raycast/window-management/left-half"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "window half right",
+                            "from": {
+                              "key_code": "l",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -g raycast://extensions/raycast/window-management/right-half"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "window almost maximize",
+                            "from": {
+                              "key_code": "k",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -g raycast://extensions/raycast/window-management/almost-maximize"
+                              }
+                            ],
+                            "type": "basic"
+                          }, 
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "window maximize",
+                            "from": {
+                              "key_code": "i",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -g raycast://extensions/raycast/window-management/maximize"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop 1",
+                            "from": {
+                              "key_code": "1",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "1",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop 2",
+                            "from": {
+                              "key_code": "2",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "2",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop 3",
+                            "from": {
+                              "key_code": "3",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "3",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop 4",
+                            "from": {
+                              "key_code": "4",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "4",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop left",
+                            "from": {
+                              "key_code": "w",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "left_arrow",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "window_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "desktop right",
+                            "from": {
+                              "key_code": "e",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "right_arrow",
+                                "modifiers": ["left_control"]
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                          
+                          
+                      
+                        ]
+                      },
+                      {
+                        "description": "Remap Caps_lock to util_hyper key when held, escape when tapped",
+                        "manipulators": [
+                          {
+                            "from": {
+                              "key_code": "caps_lock"
+                            },
+                            "to": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper",
+                                  "value": 1
+                                }
+                              }
+                            ],
+                            "to_after_key_up": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "to_if_alone": [
+                              {
+                                "key_code": "escape"
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                        ]
+                      },
+                      {
+                        "description": "util_Hyper Key sublayer o",
+                        "manipulators": [
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              },
+                              {
+                                "name": "util_hyper_sublayer_w",
+                                "type": "variable_if",
+                                "value": 0
+                              }
+                            ],
+                            "description": "Toggle util_Hyper sublayer_o",
+                            "from": {
+                              "key_code": "o",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper_sublayer_o",
+                                  "value": 1
+                                }
+                              }
+                            ],
+                            "to_after_key_up": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper_sublayer_o",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Arc",
+                            "from": {
+                              "key_code": "b",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Arc.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Kakaotalk",
+                            "from": {
+                              "key_code": "k",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'KakaoTalk.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Warp terminal",
+                            "from": {
+                              "key_code": "comma",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Warp.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Finder",
+                            "from": {
+                              "key_code": "f",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Finder.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Calendar",
+                            "from": {
+                              "key_code": "c",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Calendar.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open mail",
+                            "from": {
+                              "key_code": "m",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Spark.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },                    
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open Spotify",
+                            "from": {
+                              "key_code": "p",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Spotify.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          },                
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_o",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "Open VS Code",
+                            "from": {
+                              "key_code": "v",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "shell_command": "open -a 'Visual Studio Code.app'"
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                        ]
+                      },
+                      {
+                        "description": "util_Hyper Key sublayer s",
+                        "manipulators": [
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper",
+                                "type": "variable_if",
+                                "value": 1
+                              },
+                              {
+                                "name": "util_hyper_sublayer_w",
+                                "type": "variable_if",
+                                "value": 0
+                              }
+                            ],
+                            "description": "Toggle util_Hyper sublayer_s",
+                            "from": {
+                              "key_code": "s",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper_sublayer_s",
+                                  "value": 1
+                                }
+                              }
+                            ],
+                            "to_after_key_up": [
+                              {
+                                "set_variable": {
+                                  "name": "util_hyper_sublayer_s",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_s",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "left_arrow",
+                            "from": {
+                              "key_code": "j",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "left_arrow"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_s",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "right_arrow",
+                            "from": {
+                              "key_code": "l",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "right_arrow"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_s",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "up_arrow",
+                            "from": {
+                              "key_code": "i",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "up_arrow"
+                              }
+                            ],
+                            "type": "basic"
+                          },
+                          {
+                            "conditions": [
+                              {
+                                "name": "util_hyper_sublayer_s",
+                                "type": "variable_if",
+                                "value": 1
+                              }
+                            ],
+                            "description": "down_arrow",
+                            "from": {
+                              "key_code": "k",
+                              "modifiers": {
+                                "optional": ["any"]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "down_arrow"
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                        ]
+                      }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 64007,
+                        "vendor_id": 13652
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "treat_as_built_in_keyboard": true
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
