@@ -22,7 +22,7 @@ use symlink for better management of dotfiles
 ## BrewFile
 
 auto install formulae and cask \
-run following commands where Brewfile is located
+run following command from directory that `BrewFile` is located
 
 ```zsh
 brew bundle
