@@ -1,5 +1,7 @@
 # Dotfiles Repository
 
+use symlink for better management of dotfiles
+
 ## Karabiner kemapping
 
 [Karabiner README](./karabiner/README.md)
