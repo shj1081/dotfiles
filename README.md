@@ -17,8 +17,13 @@
 
 ## `.zshrc`
 
-## BrewFiles
+## BrewFile
 
-auto install formulae and cask
+auto install formulae and cask \
+run following commands where Brewfile is located
+
+```zsh
+brew bundle
+```
 
 > caution: mactex require whole a lot of time, so install seperately
