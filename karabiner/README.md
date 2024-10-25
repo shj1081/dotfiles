@@ -8,7 +8,7 @@ This file configures custom key mappings to enhance keyboard efficiency, enablin
 
 -   **Key:** `Right Command`
 -   **Remap:** `F18`
--   **Usage:** F18 can act as a modifier to create additional layers or trigger specific macros.
+-   **Usage:** F18 act as change the Input source language
 
 ### 2. **Tab Key - Window Hyper Key Layer**
 
