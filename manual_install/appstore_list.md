@@ -1,3 +1,3 @@
-kakaotalk
-amphetamine
-goodnotes
+-   kakaotalk
+-   amphetamine
+-   goodnotes
