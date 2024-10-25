@@ -16,7 +16,7 @@
 
     // terminal settings
     "workbench.colorCustomizations": {
-        "terminal.background": "#000000",
+        "terminal.background": "#212528",
         "terminal.foreground": "#E0E0E0",
         "terminalCursor.background": "#E0E0E0",
         "terminalCursor.foreground": "#E0E0E0",
