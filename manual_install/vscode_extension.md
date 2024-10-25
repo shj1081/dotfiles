@@ -6,3 +6,4 @@ github theme
 Material Icon Theme
 LaTex
 GitHub Copilot
+diff
