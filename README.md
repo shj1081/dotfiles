@@ -46,8 +46,8 @@ rm -rf /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
 2. create symlink for dotfiles
 
 ```zsh
-ln -s {path for this dotfiles clone directory}/.zshrc /Users/${USER}/.zshrc
-ln -s {path for this dotfiles clone directory}/karabiner/karabiner.json /Users/${USER}/.config/karabiner/karabiner.json
-ln -s {path for this dotfiles clone directory}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/settings.json
-ln -s {path for this dotfiles clone directory}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
+ln -s {path for repo clone}/.zshrc /Users/${USER}/.zshrc
+ln -s {path for repo clone}/karabiner/karabiner.json /Users/${USER}/.config/karabiner/karabiner.json
+ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/settings.json
+ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
 ```
