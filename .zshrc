@@ -31,6 +31,9 @@ fh() {
 }
 
 
+# hide user name and host name
+PS1='%d $ '
+
 # ========================= alias =========================
 # git
 alias g='git'
