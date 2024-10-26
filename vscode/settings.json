@@ -12,6 +12,9 @@
     "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
 
+    // default python interpreter
+    "python.defaultInterpreterPath": "/Users/hyzoon/.pyenv/versions/3.9.5",
+
     // prettier settings
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.tabWidth": 4,

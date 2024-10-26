@@ -29,6 +29,10 @@ brew "ranger"
 # ls replacement
 brew "lsd"
 
+# pyenv
+brew "pyenv"
+brew "pyenv-virtualenv"
+
 # apps
 cask "spotify"
 cask "visual-studio-code"

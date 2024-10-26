@@ -2,6 +2,7 @@
 # brew configuration
 export PATH=/opt/homebrew/bin:$PATH
 
+
 # java sdk path variable
 # may be you need to execute following cmd to make symbolic link
 # sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
@@ -11,6 +12,15 @@ export JAVA_HOME_11=$(/usr/libexec/java_home -v 11)
 
 # setup java version
 export JAVA_HOME=$JAVA_HOME_17
+
+# pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Initialize pyenv and virtualenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # zoxide configuration
 eval "$(zoxide init zsh)"
@@ -75,6 +85,15 @@ alias bs='brew services'
 alias bl='brew list'
 alias bi='brew install'
 alias bui='brew uninstall'
+
+# pyenv
+alias pyenvi='pyenv install'
+alias pyenvu='pyenv uninstall'
+alias pyenvv='pyenv versions'
+alias pyenvg='pyenv global'
+alias pyenvl='pyenv local'
+alias pyenva='pyenv activate'
+alias pyenvd='pyenv deactivate'
 
 # docker
 alias d='docker'
