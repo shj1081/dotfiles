@@ -5,11 +5,16 @@
 
     // settings
     "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit", // sort imports
+        "source.addMissingImports": "explicit", // add missing imports
+        "source.fixAll": "explicit" // fix all
+    },
     "editor.fontSize": 12,
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
-    "workbench.settings.editor": "json",
+    // "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
 
     // default python interpreter
@@ -19,6 +24,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.tabWidth": 4,
     "prettier.singleQuote": true,
+
+    // c/c++ formatter settings
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AccessModifierOffset: -4, UseTab: Never, Standard: Cpp11 }",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AccessModifierOffset: -4, UseTab: Never, Standard: Cpp11 }",
 
     // terminal settings
     "workbench.colorCustomizations": {
