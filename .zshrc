@@ -97,6 +97,10 @@ alias pyenvd='pyenv deactivate'
 
 # docker
 alias d='docker'
+alias dstop='docker stop'
+alias dstart='docker start -i'
+alias dps='docker ps -a'
+alias da='docker attach'
 
 # ========================= functions =========================
 # move to directory and list files

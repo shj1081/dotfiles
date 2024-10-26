@@ -10,3 +10,5 @@
 -   todo highlight
 -   IntelliCode
 -   project manager
+-   docker
+-   remote development
