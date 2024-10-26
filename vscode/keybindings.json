@@ -2,10 +2,12 @@
     // toggle sidebar
     {
         "key": "ctrl+e",
-        "command": "runCommands",
-        "args": {
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        }
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorTextFocus && !sideBarVisible"
     },
 
     // Create new files and folders
@@ -29,10 +31,21 @@
     // toggle markdown preview
     {
         "key": "ctrl+p",
-        "command": "runCommands",
-        "args": {
-            "commands": ["markdown.showPreviewToSide"]
-        }
+        "command": "markdown.showPreviewToSide"
+    },
+
+    // next editor in group
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "editorFocus"
+    },
+
+    // next group
+    {
+        "key": "alt+tab",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
     },
 
     // open file in new window
@@ -42,10 +55,22 @@
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
     },
 
+    // open file in new window
+    {
+        "key": "v",
+        "command": "explorer.openToSide",
+        "when": "filesExplorerFocus && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
+    },
+
     // rename file
     {
         "key": "r",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
     }
 ]
