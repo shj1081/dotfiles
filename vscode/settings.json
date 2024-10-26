@@ -7,9 +7,10 @@
     "editor.formatOnSave": true,
     "editor.fontSize": 12,
     "editor.fontFamily": "JetBrains Mono",
-    "extensions.autoUpdate": "onlyEnabledExtensions",
     "editor.fontLigatures": true,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
     "workbench.settings.editor": "json",
+    "workbench.startupEditor": "none",
 
     // prettier settings
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -93,5 +94,8 @@
         "*": true,
         "markdown": true,
         "plaintext": false
-    }
+    },
+
+    // project manager gitbase folder
+    "projectManager.git.baseFolders": ["/Users/hyzoon/git"]
 }

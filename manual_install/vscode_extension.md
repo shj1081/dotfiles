@@ -9,3 +9,4 @@
 -   diff
 -   todo highlight
 -   IntelliCode
+-   project manager

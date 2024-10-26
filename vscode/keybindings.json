@@ -44,8 +44,7 @@
     // next group
     {
         "key": "alt+tab",
-        "command": "workbench.action.focusNextGroup",
-        "when": "editorFocus"
+        "command": "workbench.action.focusNextGroup"
     },
 
     // open file in new window
@@ -72,5 +71,11 @@
         "key": "ctrl+shift+tab",
         "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
         "when": "!activeEditorGroupEmpty"
+    },
+
+    // open project manager list
+    {
+        "key": "cmd+o",
+        "command": "projectManager.listProjects"
     }
 ]
