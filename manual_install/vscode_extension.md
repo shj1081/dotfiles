@@ -8,3 +8,4 @@
 -   GitHub Copilot
 -   diff
 -   todo highlight
+-   IntelliCode

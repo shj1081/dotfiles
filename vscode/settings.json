@@ -2,7 +2,6 @@
     // theme
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "GitHub Dark",
-    "markdown-preview-enhanced.previewTheme": "github-dark.css",
 
     // settings
     "editor.formatOnSave": true,
@@ -10,6 +9,7 @@
     "editor.fontFamily": "JetBrains Mono",
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "editor.fontLigatures": true,
+    "workbench.settings.editor": "json",
 
     // prettier settings
     "editor.defaultFormatter": "esbenp.prettier-vscode",
