@@ -79,16 +79,20 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "window half left",
+                                "description": "full screen",
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "f",
                                     "modifiers": {
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g raycast://extensions/raycast/window-management/left-half"
+                                        "key_code": "f",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -99,6 +103,163 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    }
+                                ],
+                                "description": "toggle tiling",
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "toggle accordian",
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "resize window -",
+                                "from": {
+                                    "key_code": "hyphen",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "resize window +",
+                                "from": {
+                                    "key_code": "equal_sign",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "description": "window half left",
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "j",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "aerospace service mode",
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "window half right",
@@ -110,7 +271,8 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g raycast://extensions/raycast/window-management/right-half"
+                                        "key_code": "l",
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -121,6 +283,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "window almost maximize",
@@ -132,7 +299,8 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g raycast://extensions/raycast/window-management/almost-maximize"
+                                        "key_code": "k",
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -143,6 +311,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "window maximize",
@@ -154,7 +327,8 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g raycast://extensions/raycast/window-management/maximize"
+                                        "key_code": "i",
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -165,6 +339,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "desktop 1",
@@ -177,7 +356,7 @@
                                 "to": [
                                     {
                                         "key_code": "1",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -188,6 +367,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "desktop 2",
@@ -200,7 +384,7 @@
                                 "to": [
                                     {
                                         "key_code": "2",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -211,6 +395,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "desktop 3",
@@ -223,7 +412,7 @@
                                 "to": [
                                     {
                                         "key_code": "3",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -234,6 +423,11 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "description": "desktop 4",
@@ -246,7 +440,7 @@
                                 "to": [
                                     {
                                         "key_code": "4",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -257,9 +451,264 @@
                                         "name": "window_hyper",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
-                                "description": "desktop left",
+                                "description": "desktop 5",
+                                "from": {
+                                    "key_code": "5",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "description": "desktop 6",
+                                "from": {
+                                    "key_code": "6",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "window_Hyper Key sublayer m",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Toggle window_Hyper sublayer_m",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "window_hyper_sublayer_m",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "window_hyper_sublayer_m",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 1 and swtich to it",
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 2 and swtich to it",
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 3 and swtich to it",
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "3",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 4 and swtich to it",
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 5 and swtich to it",
+                                "from": {
+                                    "key_code": "5",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_m",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "move window to desktop 6 and swtich to it",
+                                "from": {
+                                    "key_code": "6",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "window_Hyper Key sublayer w",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Toggle window_Hyper sublayer_w",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -268,8 +717,18 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_control"]
+                                        "set_variable": {
+                                            "name": "window_hyper_sublayer_w",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "window_hyper_sublayer_w",
+                                            "value": 0
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -277,22 +736,103 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "window_hyper",
+                                        "name": "window_hyper_sublayer_w",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
-                                "description": "desktop right",
+                                "description": "join windows to left",
                                 "from": {
-                                    "key_code": "e",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "j",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "join windows to right",
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "join windows to upper",
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "i",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_hyper_sublayer_w",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "join windows to down",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -342,7 +882,7 @@
                                         "value": 1
                                     },
                                     {
-                                        "name": "util_hyper_sublayer_w",
+                                        "name": "util_hyper_sublayer_s",
                                         "type": "variable_if",
                                         "value": 0
                                     }

@@ -12,3 +12,4 @@
 -   project manager
 -   docker
 -   remote development
+-   extension pack for java

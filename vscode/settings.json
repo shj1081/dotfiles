@@ -25,6 +25,11 @@
     "prettier.tabWidth": 4,
     "prettier.singleQuote": true,
 
+    // python formatter settings
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+
     // c/c++ formatter settings
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -35,6 +40,11 @@
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AccessModifierOffset: -4, UseTab: Never, Standard: Cpp11 }",
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AccessModifierOffset: -4, UseTab: Never, Standard: Cpp11 }",
+
+    // java formatter settings
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
 
     // terminal settings
     "workbench.colorCustomizations": {
@@ -116,5 +126,9 @@
     },
 
     // project manager gitbase folder
-    "projectManager.git.baseFolders": ["/Users/hyzoon/git"]
+    "projectManager.git.baseFolders": ["/Users/hyzoon/git"],
+    "leetcode.workspaceFolder": "/Users/hyzoon/leetcode",
+    "leetcode.defaultLanguage": "cpp",
+    "leetcode.hint.commandShortcut": false,
+    "security.promptForLocalFileProtocolHandling": false
 }
