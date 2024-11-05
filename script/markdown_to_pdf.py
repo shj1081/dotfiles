@@ -43,7 +43,7 @@ def create_intermediate_markdown(input_file, metadata):
         "korean": False,
         "bibfile": "bib.bib",
         "toc": True,
-        "output": "output.pdf",  # Default output file if none specified in metadata
+        "output": "output.pdf",  # Output file name
     }
 
     # Merge default metadata with user-provided metadata, prioritizing user input
