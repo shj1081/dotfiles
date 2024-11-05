@@ -8,18 +8,18 @@ use symlinks for better management of dotfiles
 
 ## Manual Installations
 
--   app store apps
--   setapp apps
--   vscode extension
+- app store apps
+- setapp apps
+- vscode extension
 
 ## VS code
 
--   keybindings
--   settings
+- keybindings
+- settings
 
 ## .zshrc
 
--   z shell config, alias, functions
+- z shell config, alias, functions
 
 ## BrewFile
 
