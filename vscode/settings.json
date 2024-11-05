@@ -1,9 +1,9 @@
 {
     // theme
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "Catppuccin Mocha",
 
-    // settings
+    // editor settings
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit", // sort imports
@@ -14,8 +14,18 @@
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": true,
     "extensions.autoUpdate": "onlyEnabledExtensions",
-    // "workbench.settings.editor": "json",
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "editor.mouseWheelZoom": true,
+    "breadcrumbs.enabled": false,
+    "editor.scorllbar.verticalScrollbarSize": 2,
+    "editor.scorllbar.horizontalScrollbarSize": 2,
     "workbench.startupEditor": "none",
+    "workbench.layoutControl.enabled": false,
+    "workbench.layoutControl.type": "menu",
+    "workbench.activityBar.visible": false,
+    // "workbench.settings.editor": "json",
 
     // default python interpreter
     "python.defaultInterpreterPath": "/Users/hyzoon/.pyenv/versions/3.9.5",
@@ -46,29 +56,35 @@
         "editor.defaultFormatter": "redhat.java"
     },
 
-    // terminal settings
-    "workbench.colorCustomizations": {
-        "terminal.background": "#212528",
-        "terminal.foreground": "#E0E0E0",
-        "terminalCursor.background": "#E0E0E0",
-        "terminalCursor.foreground": "#E0E0E0",
-        "terminal.ansiBlack": "#000000",
-        "terminal.ansiBlue": "#6FB3D2",
-        "terminal.ansiBrightBlack": "#B0B0B0",
-        "terminal.ansiBrightBlue": "#6FB3D2",
-        "terminal.ansiBrightCyan": "#76C7B7",
-        "terminal.ansiBrightGreen": "#A1C659",
-        "terminal.ansiBrightMagenta": "#D381C3",
-        "terminal.ansiBrightRed": "#FB0120",
-        "terminal.ansiBrightWhite": "#FFFFFF",
-        "terminal.ansiBrightYellow": "#FDA331",
-        "terminal.ansiCyan": "#76C7B7",
-        "terminal.ansiGreen": "#A1C659",
-        "terminal.ansiMagenta": "#D381C3",
-        "terminal.ansiRed": "#FB0120",
-        "terminal.ansiWhite": "#E0E0E0",
-        "terminal.ansiYellow": "#FDA331"
+    // markdown formatter settings
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.tabWidth": 2
     },
+
+    // terminal settings
+    // "workbench.colorCustomizations": {
+    //     "terminal.background": "#212528",
+    //     "terminal.foreground": "#E0E0E0",
+    //     "terminalCursor.background": "#E0E0E0",
+    //     "terminalCursor.foreground": "#E0E0E0",
+    //     "terminal.ansiBlack": "#000000",
+    //     "terminal.ansiBlue": "#6FB3D2",
+    //     "terminal.ansiBrightBlack": "#B0B0B0",
+    //     "terminal.ansiBrightBlue": "#6FB3D2",
+    //     "terminal.ansiBrightCyan": "#76C7B7",
+    //     "terminal.ansiBrightGreen": "#A1C659",
+    //     "terminal.ansiBrightMagenta": "#D381C3",
+    //     "terminal.ansiBrightRed": "#FB0120",
+    //     "terminal.ansiBrightWhite": "#FFFFFF",
+    //     "terminal.ansiBrightYellow": "#FDA331",
+    //     "terminal.ansiCyan": "#76C7B7",
+    //     "terminal.ansiGreen": "#A1C659",
+    //     "terminal.ansiMagenta": "#D381C3",
+    //     "terminal.ansiRed": "#FB0120",
+    //     "terminal.ansiWhite": "#E0E0E0",
+    //     "terminal.ansiYellow": "#FDA331"
+    // },
     "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
     "terminal.integrated.lineHeight": 1.2,
 
@@ -124,11 +140,20 @@
         "markdown": true,
         "plaintext": false
     },
+    "security.promptForLocalFileProtocolHandling": false,
+    "github.copilot.chat.temporalContext.enabled": true,
+    "github.copilot.chat.inlineChatHint.enabled": true,
 
     // project manager gitbase folder
     "projectManager.git.baseFolders": ["/Users/hyzoon/git"],
+
+    // leetcode settings
     "leetcode.workspaceFolder": "/Users/hyzoon/leetcode",
     "leetcode.defaultLanguage": "cpp",
     "leetcode.hint.commandShortcut": false,
-    "security.promptForLocalFileProtocolHandling": false
+
+    // codesnap settings
+    "codesnap.backgroundColor": "",
+    "codesnap.containerPadding": "0 em",
+    "codesnap.realLineNumbers": true
 }

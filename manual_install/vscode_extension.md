@@ -1,15 +1,16 @@
--   markdown all in one
--   c/c++ extension pack
--   python
--   vscode-pdf
--   github theme
--   Material Icon Theme
--   LaTex
--   GitHub Copilot
--   diff
--   todo highlight
--   IntelliCode
--   project manager
--   docker
--   remote development
--   extension pack for java
+- markdown all in one
+- c/c++ extension pack
+- python
+- vscode-pdf
+- github theme
+- catppuccine theme
+- Material Icon Theme
+- LaTex
+- GitHub Copilot
+- diff
+- todo highlight
+- IntelliCode
+- project manager
+- docker
+- remote development
+- extension pack for java
