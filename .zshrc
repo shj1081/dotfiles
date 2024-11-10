@@ -57,6 +57,7 @@ PROMPT='%F{blue}%~%f %F{green}${vcs_info_msg_0_}%f$ '
 alias g='git'
 alias gp='git push'
 alias gl='git pull'
+alias gc='git clone'
 
 # system
 alias c='clear'
@@ -69,6 +70,10 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+# ranger
+alias r='. ranger'
+alias rr='ranger'
 
 # directory
 alias ~='cd ~'
