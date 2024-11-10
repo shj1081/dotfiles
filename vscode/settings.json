@@ -1,7 +1,7 @@
 {
     // theme
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "GitHub Dark",
 
     // editor settings
     "editor.formatOnSave": true,
@@ -132,16 +132,6 @@
         }
     ],
 
-    // copilot settings
-    "github.copilot.enable": {
-        "*": true,
-        "markdown": true,
-        "plaintext": false
-    },
-    "security.promptForLocalFileProtocolHandling": false,
-    "github.copilot.chat.temporalContext.enabled": true,
-    "github.copilot.chat.inlineChatHint.enabled": true,
-
     // project manager gitbase folder
     "projectManager.git.baseFolders": ["/Users/hyzoon/git"],
 
@@ -153,5 +143,26 @@
     // codesnap settings
     "codesnap.backgroundColor": "",
     "codesnap.containerPadding": "0 em",
-    "codesnap.realLineNumbers": true
+    "codesnap.realLineNumbers": true,
+
+    // typst (tiny mist) settings
+    "tinymist.formatterMode": "typstyle",
+    "tinymist.exportPdf": "onType",
+
+    // github copilot settings
+    "github.copilot.chat.startDebugging.enabled": false,
+    "github.copilot.chat.edits.enabled": true,
+    "github.copilot.enable": {
+        "markdown": true,
+        "*": true,
+        "plaintext": true,
+        "yaml": true
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.advanced": {
+        "indentationMode": true,
+        "listCount": 3
+    },
+    "hediet.vscode-drawio.resizeImages": null,
+    "hediet.vscode-drawio.theme": "dark"
 }
