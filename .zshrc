@@ -35,11 +35,11 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # Include hidden files
 
 bindkey "ç" fzf-cd-widget # Fix for ALT+C on Mac
 
+
 # fh - search in your command history and execute selected command
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
-
 
 # prompt configuration (hide username/host, show git branch)
 autoload -Uz vcs_info
@@ -58,6 +58,7 @@ alias g='git'
 alias gp='git push'
 alias gl='git pull'
 alias gc='git clone'
+alias gch='git checkout $(git branch | fzf)'
 
 # system
 alias c='clear'
@@ -67,19 +68,17 @@ alias ag="alias | grep "
 # lsd
 alias ls='lsd'
 alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+alias la='ls -la'
 alias lt='ls --tree'
-
-# ranger
-alias r='. ranger'
-alias rr='ranger'
 
 # directory
 alias ~='cd ~'
 alias dot='cd ~/dotfiles && code . && c'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cdg='cd ~/git'
+alias cds='cd ~/scratch'
+alias cdp='cd ~/gdrive/1_Project'
 
 # inuiyeji cluster
 alias sin='ssh -p 1398 s20310083@swin.skku.edu'
@@ -107,6 +106,9 @@ alias pyenvg='pyenv global'
 alias pyenvl='pyenv local'
 alias pyenva='pyenv activate'
 alias pyenvd='pyenv deactivate'
+
+# python
+alias py='python3'
 
 # docker
 alias d='docker'

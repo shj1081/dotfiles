@@ -48,6 +48,6 @@ rm -rf /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
 ```zsh
 ln -s {path for repo clone}/.zshrc /Users/${USER}/.zshrc
 ln -s {path for repo clone}/karabiner/karabiner.json /Users/${USER}/.config/karabiner/karabiner.json
-ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/settings.json
-ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
+ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Cursor/User/settings.json
+ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Cursor/User/keybindings.json
 ```

@@ -1,7 +1,6 @@
 {
     // theme
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "GitHub Dark",
 
     // editor settings
     "editor.formatOnSave": true,
@@ -149,20 +148,23 @@
     "tinymist.formatterMode": "typstyle",
     "tinymist.exportPdf": "onType",
 
-    // github copilot settings
-    "github.copilot.chat.startDebugging.enabled": false,
-    "github.copilot.chat.edits.enabled": true,
-    "github.copilot.enable": {
-        "markdown": true,
-        "*": true,
-        "plaintext": true,
-        "yaml": true
-    },
-    "github.copilot.editor.enableAutoCompletions": true,
-    "github.copilot.advanced": {
-        "indentationMode": true,
-        "listCount": 3
-    },
+    // // github copilot settings
+    // "github.copilot.chat.startDebugging.enabled": false,
+    // "github.copilot.chat.edits.enabled": true,
+    // "github.copilot.enable": {
+    //     "markdown": true,
+    //     "*": true,
+    //     "plaintext": true,
+    //     "yaml": true
+    // },
+    // "github.copilot.editor.enableAutoCompletions": true,
+    // "github.copilot.advanced": {
+    //     "indentationMode": true,
+    //     "listCount": 3
+    // },
     "hediet.vscode-drawio.resizeImages": null,
-    "hediet.vscode-drawio.theme": "dark"
+    "hediet.vscode-drawio.theme": "dark",
+    "redhat.telemetry.enabled": false,
+    "git.autofetch": true,
+    "markdown-preview-enhanced.previewTheme": "github-dark.css"
 }

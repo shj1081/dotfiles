@@ -84,7 +84,7 @@
         "key": "cmd+shift+m",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-            "text": "mdpdf ${file}\n"
+            "text": "mdpdf \"${file}\"\n"
         }
     }
 ]
