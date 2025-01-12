@@ -50,6 +50,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
 # turn off cmd-h and cmd-alt-h
 automatically-unhide-macos-hidden-apps = true
 
+
 # accordion-padding
 accordion-padding = 30
 
@@ -193,9 +194,16 @@ if.app-id = 'com.apple.iWork.Keynote'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92' # cursor
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
@@ -213,6 +221,10 @@ run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.readdle.SparkDesktop-setapp'
 run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]

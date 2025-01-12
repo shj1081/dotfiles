@@ -1,6 +1,13 @@
 # ========================= custom =========================
+# oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+
 # brew configuration
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 
 
 # java sdk path variable
@@ -17,6 +24,13 @@ export JAVA_HOME=$JAVA_HOME_17
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+# locale configuration during ssh login
+export LANG=ko_KR.UTF-8
+export LC_ALL=ko_KR.UTF-8
+
+# bat configuration
+export BAT_THEME="ansi"
+
 # Initialize pyenv and virtualenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
@@ -27,30 +41,16 @@ eval "$(zoxide init zsh)"
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # Include hidden files
-
 bindkey "ç" fzf-cd-widget # Fix for ALT+C on Mac
-
 
 # fh - search in your command history and execute selected command
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
-
-# prompt configuration (hide username/host, show git branch)
-autoload -Uz vcs_info
-precmd() { 
-  vcs_info 
-  }
-
-zstyle ':vcs_info:git:*' formats '%b '
-
-setopt PROMPT_SUBST
-PROMPT='%F{blue}%~%f %F{green}${vcs_info_msg_0_}%f$ '
 
 # ========================= alias =========================
 # git
@@ -64,6 +64,9 @@ alias gch='git checkout $(git branch | fzf)'
 alias c='clear'
 alias e='exit'
 alias ag="alias | grep "
+
+# ssh config
+alias sshconfig='bat ~/.ssh/config'
 
 # lsd
 alias ls='lsd'
@@ -79,17 +82,6 @@ alias ...='cd ../..'
 alias cdg='cd ~/git'
 alias cds='cd ~/scratch'
 alias cdp='cd ~/gdrive/1_Project'
-
-# inuiyeji cluster
-alias sin='ssh -p 1398 s20310083@swin.skku.edu'
-alias sui='ssh -p 1398 s20310083@swui.skku.edu'
-alias sye='ssh -p 1398 s20310083@swye.skku.edu'
-alias sji='ssh -p 1398 s20310083@swji.skku.edu'
-
-# postgresql
-alias pgstart='brew services start postgresql'
-alias pgstop='brew services stop postgresql'
-alias pg='psql postgres'
 
 # brew
 alias bu='brew upgrade'
@@ -107,8 +99,13 @@ alias pyenvl='pyenv local'
 alias pyenva='pyenv activate'
 alias pyenvd='pyenv deactivate'
 
+alias pyenvml='pyenv activate machine_learning'
+
 # python
 alias py='python3'
+
+# cursor to code
+alias code='cursor'
 
 # docker
 alias d='docker'
@@ -117,8 +114,8 @@ alias dstart='docker start -i'
 alias dps='docker ps -a'
 alias da='docker attach'
 
-# ========================= functions =========================
-# move to directory and list files
-function cdl() {
-  cd $1 && l
-}
+# docker mysql
+alias dmysql='docker exec -it mysql-container mysql -u root -p'
+
+# docker postgres
+alias dpsql='docker exec -it postgres-container psql -U root'

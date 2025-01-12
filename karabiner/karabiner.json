@@ -1039,7 +1039,51 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Spark.app'"
+                                        "shell_command": "open -a 'Spark Mail.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "util_hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open slack",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Slack.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "util_hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open notion",
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Notion.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1074,7 +1118,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open VS Code",
+                                "description": "Open Cursor",
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
