@@ -86,5 +86,13 @@
         "args": {
             "text": "mdpdf \"${file}\"\n"
         }
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "cmd+r alt+cmd+left",
+        "command": "-workbench.action.previousEditorInGroup"
     }
 ]

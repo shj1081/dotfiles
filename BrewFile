@@ -1,44 +1,68 @@
-# pandoc for convert markdown to pdf
-brew "pandoc"
-cask "mactex"
-brew "pandoc-crossref"
+# Homebrew Taps
+tap "adoptopenjdk/openjdk"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "nikitabobko/tap"
 
-# Cross-platform make
-brew "cmake"
+# Command-Line Tools
+brew "bat"                      # Clone of cat(1) with syntax highlighting and Git integration
+brew "cmake"                    # Cross-platform make
+brew "fzf"                      # Command-line fuzzy finder written in Go
+brew "lsd"                      # Clone of ls with colorful output, file type icons, and more
+brew "ripgrep"                  # Search tool like grep and The Silver Searcher
+brew "zoxide"                   # Shell extension to navigate your filesystem faster
 
-# A better cd command
-brew "zoxide"
+# Development Tools
+brew "cask"                     # Emacs dependency management
+brew "node"                     # Platform built on V8 to build network applications
+brew "openjdk@11"               # Development kit for the Java programming language
+brew "openjdk@17"               # Development kit for the Java programming language
+brew "pandoc"                   # Swiss-army knife of markup format conversion
+brew "pandoc-crossref"          # Pandoc filter for numbering and cross-referencing
+brew "pkgconf"                  # Package compiler and linker metadata toolkit
+brew "pyenv"                    # Python version management
+brew "pyenv-virtualenv"         # Pyenv plugin to manage virtualenv
+brew "yarn"                     # JavaScript package manager
 
-# fzf - fuzzy finder
-brew "fzf"
+# Shell Enhancements
+brew "zsh-autosuggestions"      # Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-syntax-highlighting"  # Fish shell like syntax highlighting for zsh
 
-# JAVA sdk
-brew "openjdk@17"
-brew "openjdk@11"
+# GUI Applications
 
-# docker
-cask "docker"
+## Development
+cask "visual-studio-code@insiders" # Code editor
+cask "cursor"                      # Write, edit, and chat about your code with AI
+cask "docker"                      # App to build and share containerised applications and microservices
+cask "postman"                     # Collaboration platform for API development
+cask "warp"                        # Rust-based terminal
 
-# DBMS
-brew "mysql"
-brew "postgresql@14"
+## Productivity
+cask "notion"                      # App to write, plan, collaborate, and get organised
+cask "raycast"                     # Control your tools with a few keystrokes
+cask "slack"                       # Team communication and collaboration software
+cask "zoom"                        # Video communication and virtual meeting platform
 
-# File browser in terminal
-brew "ranger"
+## System Utilities
+cask "aerospace"                   # AeroSpace is an i3-like tiling window manager for macOS
+cask "appcleaner"                  # Application uninstaller
+cask "karabiner-elements"          # Keyboard customiser
+cask "keka"                        # File archiver
+cask "keyboardcleantool"           # Blocks all Keyboard and TouchBar input
+cask "keycastr"                    # Open-source keystroke visualiser
 
-# ls replacement
-brew "lsd"
+## Fonts
+cask "font-jetbrains-mono"         # JetBrains Mono font
+cask "font-meslo-lg-nerd-font"     # Meslo LG Nerd Font
 
-# pyenv
-brew "pyenv"
-brew "pyenv-virtualenv"
+## Entertainment
+cask "spotify"                     # Music streaming service
 
-# apps
-cask "spotify"
-cask "visual-studio-code"
-cask "karabiner-elements"
-cask "warp"
-cask "raycast"
-cask "font-jetbrains-mono"
-cask "font-meslo-lg-nerd-font"
-cask "slack"
+## Browsers
+cask "zen-browser"                 # Gecko based web browser
+
+## Virtualization
+cask "utm"                         # Virtual machines UI using QEMU
+
+## Text Utilities
+cask "mactex"                      # Full TeX Live distribution with GUI applications
