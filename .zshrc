@@ -35,6 +35,9 @@ export BAT_THEME="ansi"
 # starship
 eval "$(starship init zsh)"
 
+# the fuck
+eval $(thefuck --alias)
+
 # Initialize pyenv and virtualenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
