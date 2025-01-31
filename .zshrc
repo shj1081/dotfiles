@@ -1,9 +1,10 @@
 # ========================= custom =========================
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
+
 
 # brew configuration
 export PATH=/opt/homebrew/bin:$PATH
@@ -30,6 +31,9 @@ export LC_ALL=ko_KR.UTF-8
 
 # bat configuration
 export BAT_THEME="ansi"
+
+# starship
+eval "$(starship init zsh)"
 
 # Initialize pyenv and virtualenv
 eval "$(pyenv init --path)"
@@ -69,7 +73,7 @@ alias ag="alias | grep "
 alias sshconfig='bat ~/.ssh/config'
 
 # lsd
-alias ls='lsd'
+alias ls='lsd --icon never'
 alias l='ls -l'
 alias la='ls -la'
 alias lt='ls --tree'

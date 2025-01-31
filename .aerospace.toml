@@ -12,10 +12,7 @@
 
 # All possible modifiers: cmd, alt, ctrl, shift
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # ========================================================================
-
 
 # start options
 after-login-command = []
@@ -43,26 +40,21 @@ on-focus-changed = ['move-mouse window-lazy-center']
 # turn off cmd-h and cmd-alt-h
 automatically-unhide-macos-hidden-apps = true
 
-
 # accordion-padding
 accordion-padding = 30
-
 
 # keyboard layout
 [key-mapping]
 preset = 'qwerty'
 
-# Gaps between windows (inner-*) and between monitor edges (outer-*).
-# - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+# Gaps between windows
 [gaps]
-inner.horizontal = 18
-inner.vertical =   18
-outer.left =       18
-outer.bottom =     18
-outer.top =        18
-outer.right =      18
-
+inner.vertical =   [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+outer.left =       [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+inner.horizontal = [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+outer.bottom =     [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+outer.top =        [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+outer.right =      [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
 
 # 'main' binding mode declaration
 [mode.main.binding]

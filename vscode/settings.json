@@ -166,5 +166,7 @@
     "hediet.vscode-drawio.theme": "dark",
     "redhat.telemetry.enabled": false,
     "git.autofetch": true,
-    "markdown-preview-enhanced.previewTheme": "github-dark.css"
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "C_Cpp.default.cppStandard": "gnu++11",
+    "workbench.colorTheme": "Anysphere"
 }
