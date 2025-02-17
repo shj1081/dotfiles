@@ -62,6 +62,9 @@ fh() {
 # ========================= alias =========================
 # git
 alias g='git'
+alias gb='git branch'
+alias gba='git branch --all'  
+alias gbd='git branch --delete'
 alias gp='git push'
 alias gl='git pull'
 alias gc='git clone'

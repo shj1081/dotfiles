@@ -142,6 +142,8 @@ p = ['''exec-and-forget open -a 'Spotify.app'
 ''', 'mode main']
 v = ['''exec-and-forget open -a 'Cursor.app'
 ''', 'mode main']
+t = ['''exec-and-forget open -a 'Stickies.app'
+''', 'mode main'] # t for todo
 
 
 # On window detected

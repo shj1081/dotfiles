@@ -1,9 +1,6 @@
 {
     // theme
     "workbench.iconTheme": "material-icon-theme",
-
-    // editor settings
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit", // sort imports
         "source.addMissingImports": "explicit", // add missing imports
@@ -25,7 +22,7 @@
     // "workbench.settings.editor": "json",
 
     // default python interpreter
-    "python.defaultInterpreterPath": "/Users/hyzoon/.pyenv/versions/3.9.5",
+    "python.defaultInterpreterPath": "/Users/hyzoon/.pyenv/versions/3.9.5/envs/tmp",
 
     // prettier settings
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -168,5 +165,6 @@
     "git.autofetch": true,
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
     "C_Cpp.default.cppStandard": "gnu++11",
-    "workbench.colorTheme": "Anysphere"
+    "workbench.colorTheme": "Anysphere",
+    "diffEditor.ignoreTrimWhitespace": false
 }
