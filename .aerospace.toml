@@ -152,6 +152,10 @@ t = ['''exec-and-forget open -a 'Stickies.app'
 
 # On window detected
 [[on-window-detected]]
+if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.kakao.KakaoTalkMac'
 run = 'layout floating'
 
