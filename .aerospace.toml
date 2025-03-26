@@ -49,12 +49,12 @@ preset = 'qwerty'
 
 # Gaps between windows
 [gaps]
-inner.vertical =   [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
-outer.left =       [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
-inner.horizontal = [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
-outer.bottom =     [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
-outer.top =        [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
-outer.right =      [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 30 }, 16]
+inner.vertical =   [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
+outer.left =       [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
+inner.horizontal = [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
+outer.bottom =     [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
+outer.top =        [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
+outer.right =      [{ monitor."Built-in Retina Display" = 16 }, { monitor."DELL P2723QE" = 16 }, 16]
 
 # 'main' binding mode declaration
 [mode.main.binding]
@@ -91,6 +91,7 @@ alt-4 = 'workspace 4' # finder / preview
 alt-5 = 'workspace 5' # communication
 alt-6 = 'workspace 6' # notion
 alt-7 = 'workspace 7' # mac retina display
+alt-8 = 'workspace 8' # mac retina display
 
 # Fullscreen (binded to karabiner-window_hyper)
 alt-shift-f = 'fullscreen'
@@ -109,6 +110,7 @@ alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 
 # move window back to original workspace
 
@@ -146,13 +148,23 @@ p = ['''exec-and-forget open -a 'Spotify.app'
 ''', 'mode main']
 v = ['''exec-and-forget open -a 'Cursor.app'
 ''', 'mode main']
-t = ['''exec-and-forget open -a 'Stickies.app'
-''', 'mode main'] # t for todo
+t = ['''exec-and-forget open -a 'Obsidian.app'
+''', 'mode main'] 
 
 
 # On window detected
 [[on-window-detected]]
 if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.riotgames.RiotGames.RiotClient'
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -184,11 +196,27 @@ if.app-id = 'com.jetbrains.intellij' # intellij
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode' # cursor
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser' # arc
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
 if.app-id = 'com.apple.iCal' # calendar
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'notion.id'# notion
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
@@ -204,19 +232,16 @@ if.app-id = 'com.readdle.SparkDesktop-setapp' # spark mail
 run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
-if.app-id = 'notion.id'# notion
-run = ['move-node-to-workspace 6']
-
-[[on-window-detected]]
 if.app-id = 'com.spotify.client' # spotify
-run = ['move-node-to-workspace 7']
+run = ['move-node-to-workspace 6']
 
 # Workspace to monitor force assignment
 [workspace-to-monitor-force-assignment]
-1 = 'main'
+1 = 'main' 
 2 = 'main'
-3 = 'main'
+3 = 'main'  
 4 = 'main'
 5 = 'main'
-6 = 'main' 
-7 = 'built-in'
+6 = 'built-in' 
+7 = 'SAMSUNG'
+8 = 'sidecar'

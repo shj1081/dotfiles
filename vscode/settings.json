@@ -14,7 +14,6 @@
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "none",
     "editor.mouseWheelZoom": true,
-    "breadcrumbs.enabled": false,
     "editor.scorllbar.verticalScrollbarSize": 2,
     "editor.scorllbar.horizontalScrollbarSize": 2,
     "workbench.startupEditor": "none",
@@ -53,8 +52,17 @@
 
     // markdown formatter settings
     "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "prettier.tabWidth": 2
+    },
+
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
     },
 
     // terminal settings
@@ -167,5 +175,16 @@
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
     "C_Cpp.default.cppStandard": "gnu++11",
     "workbench.colorTheme": "Anysphere",
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "geminicodeassist.project": "",
+    "cloudcode.duetAI.project": "",
+    "go.toolsManagement.autoUpdate": true,
+    "svelte.enable-ts-plugin": true
 }
