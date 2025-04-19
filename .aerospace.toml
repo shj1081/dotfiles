@@ -97,6 +97,11 @@ alt-k = 'focus down'
 alt-i = 'focus up'
 alt-l = 'focus right'
 
+alt-shift-ctrl-j = ['join-with left', 'mode main']
+alt-shift-ctrl-k = ['join-with down', 'mode main']
+alt-shift-ctrl-i = ['join-with up', 'mode main']
+alt-shift-ctrl-l = ['join-with right', 'mode main']
+
 # Move window (binded to karabiner-window_hyper)
 alt-shift-j = 'move left'
 alt-shift-k = 'move down'
@@ -147,10 +152,6 @@ f = [
     'mode main',
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
-alt-shift-j = ['join-with left', 'mode main']
-alt-shift-k = ['join-with down', 'mode main']
-alt-shift-i = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
 
 # Exec mode
 [mode.exec.binding]
@@ -211,7 +212,7 @@ if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92' # cursor
+if.app-id = 'com.microsoft.VSCodeInsiders'
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
@@ -220,10 +221,6 @@ run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij' # intellij
-run = ['move-node-to-workspace 1']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.dt.Xcode'   # cursor
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
@@ -244,10 +241,6 @@ run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = ['move-node-to-workspace 3']
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
@@ -273,4 +266,4 @@ run = ['move-node-to-workspace 6']
 3 = 'main'
 4 = 'main'
 5 = 'main'
-6 = 'built-in'
+6 = 'main'

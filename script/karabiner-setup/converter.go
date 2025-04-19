@@ -13,25 +13,25 @@ import (
 
 // KarabinerConfig represents the full structure of karabiner.json
 type KarabinerConfig struct {
-	Global   map[string]interface{} `json:"global"`
-	Profiles []Profile              `json:"profiles"`
+	Global   json.RawMessage `json:"global"`
+	Profiles []Profile       `json:"profiles"`
 }
 
 // Profile represents a Karabiner profile
 type Profile struct {
-	Name                 string                 `json:"name"`
-	Selected             bool                   `json:"selected"`
-	SimpleModifications  []interface{}          `json:"simple_modifications"`
-	ComplexModifications ComplexModifications   `json:"complex_modifications"`
-	Devices              []interface{}          `json:"devices"`
-	FnFunctionKeys       []interface{}          `json:"fn_function_keys"`
-	VirtualHidKeyboard   map[string]interface{} `json:"virtual_hid_keyboard,omitempty"`
+	ComplexModifications ComplexModifications `json:"complex_modifications"`
+	Devices              json.RawMessage      `json:"devices"`
+	Name                 string               `json:"name"`
+	Selected             bool                 `json:"selected"`
+	VirtualHidKeyboard   json.RawMessage      `json:"virtual_hid_keyboard,omitempty"`
+	// 추가 필드들에 대해서도 RawMessage 사용
+	Parameters json.RawMessage `json:"parameters,omitempty"`
 }
 
 // ComplexModifications contains parameters and rules
 type ComplexModifications struct {
-	Parameters map[string]interface{} `json:"parameters"`
-	Rules      []Rule                 `json:"rules"`
+	Parameters json.RawMessage `json:"parameters"`
+	Rules      []Rule          `json:"rules"`
 }
 
 // Rule represents a complex modification rule

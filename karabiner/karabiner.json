@@ -1,1085 +1,1482 @@
 {
-    "global": {
-        "ask_for_confirmation_before_quitting": true,
-        "check_for_updates_on_startup": false,
-        "show_in_menu_bar": false,
-        "show_profile_name_in_menu_bar": false,
-        "unsafe_ui": false
-    },
-    "profiles": [
-        {
-            "complex_modifications": {
-                "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 200,
-                    "basic.to_if_held_down_threshold_milliseconds": 200,
-                    "mouse_motion_to_scroll.speed": 100
+  "global": {
+    "ask_for_confirmation_before_quitting": true,
+    "check_for_updates_on_startup": false,
+    "show_in_menu_bar": false,
+    "show_profile_name_in_menu_bar": false,
+    "unsafe_ui": false
+  },
+  "profiles": [
+    {
+      "complex_modifications": {
+        "parameters": {
+          "basic.simultaneous_threshold_milliseconds": 50,
+          "basic.to_delayed_action_delay_milliseconds": 500,
+          "basic.to_if_alone_timeout_milliseconds": 200,
+          "basic.to_if_held_down_threshold_milliseconds": 200,
+          "mouse_motion_to_scroll.speed": 100
+        },
+        "rules": [
+          {
+            "description": "right cmd to f18",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "right_command"
                 },
-                "rules": [
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "right_command"
-                            },
-                            "to": [
-                            {
-                                "key_code": "f18"
-                            }
-                            ],
-                            "description": "right cmd to f18"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "caps_lock"
-                            },
-                            "to": [
-                            {
-                                "set_variable": {
-                                "name": "util_hyper",
-                                "value": 1
-                                }
-                            }
-                            ],
-                            "to_if_alone": [
-                            {
-                                "key_code": "escape"
-                            }
-                            ],
-                            "to_after_key_up": [
-                            {
-                                "set_variable": {
-                                "name": "util_hyper",
-                                "value": 0
-                                }
-                            }
-                            ],
-                            "description": "Remap Caps_lock to util_hyper key when held, escape when tapped"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "tab"
-                            },
-                            "to": [
-                            {
-                                "set_variable": {
-                                "name": "window_hyper",
-                                "value": 1
-                                }
-                            }
-                            ],
-                            "to_if_alone": [
-                            {
-                                "key_code": "tab"
-                            }
-                            ],
-                            "to_after_key_up": [
-                            {
-                                "set_variable": {
-                                "name": "window_hyper",
-                                "value": 0
-                                }
-                            }
-                            ],
-                            "description": "Remap Tab to window_hyper key when held, Tab when tapped"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "j",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "j",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "focus left"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "k",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "k",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "focus down"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "l",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "l",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "focus right"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "i",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "i",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "focus up"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "semicolon",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "semicolon",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "switch to service mode"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "o",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "o",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "util_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "switch to exec mode"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "j",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "j",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "move window left"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "k",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "k",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "move window down"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "l",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "l",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "move window right"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "i",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "i",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "move window up"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "f",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "f",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "full screen"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "slash",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "slash",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "toggle tiling"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "comma",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "comma",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "toggle accordian"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "hyphen",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "hyphen",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "resize smart -50"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "equal_sign",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "equal_sign",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "resize smart +50"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "1",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "1",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 1"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "2",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "2",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 2"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "3",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "3",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 3"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "4",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "4",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 4"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "5",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "5",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 5"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "6",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "6",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 6"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "7",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "7",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 7"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "8",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "8",
-                                "modifiers": [
-                                "left_option"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            },
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 0
-                            }
-                            ],
-                            "description": "desktop 8"
-                        }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "m",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "set_variable": {
-                                "name": "window_hyper_sublayer_m",
-                                "value": 1
-                                }
-                            }
-                            ],
-                            "to_after_key_up": [
-                            {
-                                "set_variable": {
-                                "name": "window_hyper_sublayer_m",
-                                "value": 0
-                                }
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "Toggle window_Hyper sublayer_m"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "1",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "1",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 1 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "2",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "2",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 2 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "3",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "3",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 3 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "4",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "4",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 4 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "5",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "5",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 5 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "6",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "6",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 6 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "7",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "7",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 7 and switch to it"
-                        },
-                        {
-                            "type": "basic",
-                            "from": {
-                            "key_code": "8",
-                            "modifiers": {
-                                "optional": [
-                                "any"
-                                ]
-                            }
-                            },
-                            "to": [
-                            {
-                                "key_code": "8",
-                                "modifiers": [
-                                "left_option",
-                                "left_shift"
-                                ]
-                            }
-                            ],
-                            "conditions": [
-                            {
-                                "name": "window_hyper_sublayer_m",
-                                "type": "variable_if",
-                                "value": 1
-                            }
-                            ],
-                            "description": "move window to desktop 8 and switch to it"
-                        }
-                        ]
-                    }
+                "to": [
+                  {
+                    "key_code": "f18"
+                  }
                 ]
-            },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 64007,
-                        "vendor_id": 13652
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "treat_as_built_in_keyboard": true
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+              }
+            ]
+          },
+          {
+            "description": "Remap Caps_lock to util_hyper key when held, escape when tapped",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "caps_lock"
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "util_hyper",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "util_hyper",
+                      "value": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Remap Tab to window_hyper key when held, Tab when tapped",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "tab"
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_if_alone": [
+                  {
+                    "key_code": "tab"
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper",
+                      "value": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "util_hyper key mappings - focus window",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "focus left"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "focus down"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "focus right"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "focus up"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "semicolon",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "switch to service mode"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "switch to exec mode"
+              }
+            ]
+          },
+          {
+            "description": "window_hyper key mappings - move window",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "move window left"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "move window down"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "move window right"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "move window up"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "full screen"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "slash",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "slash",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "toggle tiling"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "comma",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "toggle accordian"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "hyphen",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "hyphen",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "resize smart -50"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "equal_sign",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "equal_sign",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "resize smart +50"
+              }
+            ]
+          },
+          {
+            "description": "window_hyper workspace navigation",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "1",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 1"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "2",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 2"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "3",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 3"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 4"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "5",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 5"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "6",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 6"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "7",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "7",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 7"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "8",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "8",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "description": "desktop 8"
+              }
+            ]
+          },
+          {
+            "description": "window_Hyper Key sublayer w - join window",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper_sublayer_w",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper_sublayer_w",
+                      "value": 0
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Toggle window_Hyper sublayer_w"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "join window left"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "join window down"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "join window right"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "join window up"
+              }
+            ]
+          },
+          {
+            "description": "util_hyper space sublayer - arrow keys",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "util_hyper_sublayer_space",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "util_hyper_sublayer_space",
+                      "value": 0
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Toggle util_hyper space sublayer"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "left arrow key"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "down_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "down arrow key"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "right arrow key"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "up arrow key"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "option left arrow key"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "util_hyper_sublayer_space",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "option right arrow key"
+              }
+            ]
+          },
+          {
+            "description": "window_Hyper Key sublayer m - move window to workspace",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper_sublayer_m",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "window_hyper_sublayer_m",
+                      "value": 0
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Toggle window_Hyper sublayer_m"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "1",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 1 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "2",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 2 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "3",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 3 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 4 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "5",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 5 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "6",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 6 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "7",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "7",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 7 and switch to it"
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "8",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "8",
+                    "modifiers": [
+                      "left_option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "name": "window_hyper_sublayer_m",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "move window to desktop 8 and switch to it"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true,
+            "product_id": 64007,
+            "vendor_id": 13652
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": false,
+          "treat_as_built_in_keyboard": true
         }
-    ]
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      }
+    }
+  ]
 }

@@ -1,7 +1,6 @@
 # filepath: /Users/hyzoon/dotfiles/script/karabiner-setup/rules.yaml
 # karabiner-rules.yaml
 # Only modifies the rules section of karabiner.json
-  123 12
 rules:
   - description: "right cmd to f18"
     manipulators:
@@ -58,6 +57,9 @@ rules:
           - type: "variable_if"
             name: "util_hyper"
             value: 1
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 0
 
       - type: "basic"
         description: "focus down"
@@ -71,6 +73,9 @@ rules:
           - type: "variable_if"
             name: "util_hyper"
             value: 1
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 0
 
       - type: "basic"
         description: "focus right"
@@ -84,6 +89,9 @@ rules:
           - type: "variable_if"
             name: "util_hyper"
             value: 1
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 0
 
       - type: "basic"
         description: "focus up"
@@ -97,6 +105,9 @@ rules:
           - type: "variable_if"
             name: "util_hyper"
             value: 1
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 0
 
       - type: "basic"
         description: "switch to service mode"
@@ -110,6 +121,9 @@ rules:
           - type: "variable_if"
             name: "util_hyper"
             value: 1
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 0
 
       - type: "basic"
         description: "switch to exec mode"
@@ -141,6 +155,9 @@ rules:
           - type: "variable_if"
             name: "window_hyper_sublayer_m"
             value: 0
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 0
 
       - type: "basic"
         description: "move window down"
@@ -156,6 +173,9 @@ rules:
             value: 1
           - type: "variable_if"
             name: "window_hyper_sublayer_m"
+            value: 0
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
             value: 0
 
       - type: "basic"
@@ -173,6 +193,9 @@ rules:
           - type: "variable_if"
             name: "window_hyper_sublayer_m"
             value: 0
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 0
 
       - type: "basic"
         description: "move window up"
@@ -188,6 +211,9 @@ rules:
             value: 1
           - type: "variable_if"
             name: "window_hyper_sublayer_m"
+            value: 0
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
             value: 0
 
       - type: "basic"
@@ -384,6 +410,172 @@ rules:
           - type: "variable_if"
             name: "window_hyper_sublayer_m"
             value: 0
+
+  - description: "window_Hyper Key sublayer w - join window"
+    manipulators:
+      - type: "basic"
+        description: "Toggle window_Hyper sublayer_w"
+        from:
+          key_code: "w"
+          optional_mods: ["any"]
+        to:
+          - set_variable:
+              name: "window_hyper_sublayer_w"
+              value: 1
+        to_after_key_up:
+          - set_variable:
+              name: "window_hyper_sublayer_w"
+              value: 0
+        conditions:
+          - type: "variable_if"
+            name: "window_hyper"
+            value: 1
+
+      - type: "basic"
+        description: "join window left"
+        from:
+          key_code: "j"
+          optional_mods: ["any"]
+        to:
+          - key_code: "j"
+            modifiers: ["left_option", "left_shift", "left_control"]
+        conditions:
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 1
+
+      - type: "basic"
+        description: "join window down"
+        from:
+          key_code: "k"
+          optional_mods: ["any"]
+        to:
+          - key_code: "k"
+            modifiers: ["left_option", "left_shift", "left_control"]
+        conditions:
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 1
+
+      - type: "basic"
+        description: "join window right"
+        from:
+          key_code: "l"
+          optional_mods: ["any"]
+        to:
+          - key_code: "l"
+            modifiers: ["left_option", "left_shift", "left_control"]
+        conditions:
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 1
+
+      - type: "basic"
+        description: "join window up"
+        from:
+          key_code: "i"
+          optional_mods: ["any"]
+        to:
+          - key_code: "i"
+            modifiers: ["left_option", "left_shift", "left_control"]
+        conditions:
+          - type: "variable_if"
+            name: "window_hyper_sublayer_w"
+            value: 1
+
+  - description: "util_hyper space sublayer - arrow keys"
+    manipulators:
+      - type: "basic"
+        description: "Toggle util_hyper space sublayer"
+        from:
+          key_code: "s"
+          optional_mods: ["any"]
+        to:
+          - set_variable:
+              name: "util_hyper_sublayer_space"
+              value: 1
+        to_after_key_up:
+          - set_variable:
+              name: "util_hyper_sublayer_space"
+              value: 0
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper"
+            value: 1
+
+      - type: "basic"
+        description: "left arrow key"
+        from:
+          key_code: "j"
+          optional_mods: ["any"]
+        to:
+          - key_code: "left_arrow"
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
+
+      - type: "basic"
+        description: "down arrow key"
+        from:
+          key_code: "k"
+          optional_mods: ["any"]
+        to:
+          - key_code: "down_arrow"
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
+
+      - type: "basic"
+        description: "right arrow key"
+        from:
+          key_code: "l"
+          optional_mods: ["any"]
+        to:
+          - key_code: "right_arrow"
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
+
+      - type: "basic"
+        description: "up arrow key"
+        from:
+          key_code: "i"
+          optional_mods: ["any"]
+        to:
+          - key_code: "up_arrow"
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
+
+      - type: "basic"
+        description: "option left arrow key"
+        from:
+          key_code: "h"
+          optional_mods: ["any"]
+        to:
+          - key_code: "left_arrow"
+            modifiers: ["left_option"]
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
+
+      - type: "basic"
+        description: "option right arrow key"
+        from:
+          key_code: "semicolon"
+          optional_mods: ["any"]
+        to:
+          - key_code: "right_arrow"
+            modifiers: ["left_option"]
+        conditions:
+          - type: "variable_if"
+            name: "util_hyper_sublayer_space"
+            value: 1
 
   - description: "window_Hyper Key sublayer m - move window to workspace"
     manipulators:
