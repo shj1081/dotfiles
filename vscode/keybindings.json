@@ -118,5 +118,17 @@
     {
         "key": "shift+cmd+o",
         "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "cmd+l",
+        "command": "composerMode.chat"
+    },
+    {
+        "key": "cmd+k",
+        "command": "composerMode.edit"
     }
 ]

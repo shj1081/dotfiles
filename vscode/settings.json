@@ -172,7 +172,7 @@
     "hediet.vscode-drawio.theme": "dark",
     "redhat.telemetry.enabled": false,
     "git.autofetch": true,
-    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
     "C_Cpp.default.cppStandard": "gnu++11",
     "workbench.colorTheme": "Anysphere",
     "diffEditor.ignoreTrimWhitespace": false,
@@ -186,5 +186,18 @@
     "geminicodeassist.project": "",
     "cloudcode.duetAI.project": "",
     "go.toolsManagement.autoUpdate": true,
-    "svelte.enable-ts-plugin": true
+    "svelte.enable-ts-plugin": true,
+    "terminal.integrated.allowedLinkSchemes": [
+        "file",
+        "http",
+        "https",
+        "mailto",
+        "vscode",
+        "vscode-insiders",
+        "docker-desktop"
+    ],
+    "cursor.cpp.enablePartialAccepts": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "cursor.cpp.disabledLanguages": ["plaintext"]
 }

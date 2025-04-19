@@ -1,0 +1,10 @@
+"git": {
+    "command": "docker",
+    "args": [
+      "run",
+      "--rm",
+      "-i",
+      "--mount", "type=bind,src=/Users/hyzoon/git,dst=/projects/git",
+      "mcp/git"
+    ]
+  }

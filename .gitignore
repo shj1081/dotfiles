@@ -1,2 +1,4 @@
 # ssh configs
-servers.json
+servers.yaml
+
+.DS_Store

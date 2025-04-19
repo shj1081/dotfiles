@@ -56,10 +56,6 @@ eval "$(starship init zsh)"
 # the fuck
 eval $(thefuck --alias)
 
-# Initialize pyenv and virtualenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # zoxide configuration
 eval "$(zoxide init zsh)"
@@ -118,22 +114,12 @@ alias bl='brew list'
 alias bi='brew install'
 alias bui='brew uninstall'
 
-# pyenv
-alias pyenvi='pyenv install'
-alias pyenvu='pyenv uninstall'
-alias pyenvv='pyenv versions'
-alias pyenvg='pyenv global'
-alias pyenvl='pyenv local'
-alias pyenva='pyenv activate'
-alias pyenvd='pyenv deactivate'
-
-alias pyenvml='pyenv activate machine_learning'
 
 # python
 alias py='python3'
 
 # cursor to code
-alias code='cursor'
+# alias code='cursor'
 
 # docker
 alias d='docker'
@@ -147,3 +133,17 @@ alias dmysql='docker exec -it mysql-container mysql -u root -p'
 
 # docker postgres
 alias dpsql='docker exec -it postgres-container psql -U root'
+
+
+
+# kubectl completion
+source <(kubectl completion zsh)
+
+# kubectl alias
+alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kx='kubectl exec -it'
+
+# Added by Windsurf
+export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"

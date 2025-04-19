@@ -17,7 +17,7 @@
 # start options
 after-login-command = []
 after-startup-command = []
-start-at-login = true
+start-at-login = false
 
 # Normalizations
 enable-normalization-flatten-containers = true
@@ -148,7 +148,7 @@ p = ['''exec-and-forget open -a 'Spotify.app'
 ''', 'mode main']
 v = ['''exec-and-forget open -a 'Cursor.app'
 ''', 'mode main']
-t = ['''exec-and-forget open -a 'Obsidian.app'
+t = ['''exec-and-forget open -a 'Todoist.app'
 ''', 'mode main'] 
 
 
@@ -213,6 +213,10 @@ run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'notion.id'# notion
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
