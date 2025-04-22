@@ -1,53 +1,75 @@
 # Dotfiles Repository
 
-use symlinks for better management of dotfiles
+Use symlinks for better management of dotfiles. This repository provides automated setup via Makefile.
+
+## Quick Setup
+
+To set up everything at once:
+
+```zsh
+make all
+```
 
 ## Karabiner kemapping
 
 [Karabiner README](./karabiner/README.md)
 
-## Manual Installations
+Set up Karabiner configuration:
 
-- app store apps
-- setapp apps
-- vscode extension
+```zsh
+make karabiner
+```
 
-## VS code
+## VS Code
 
-- keybindings
-- settings
+Set up VS Code settings and keybindings:
+
+```zsh
+make vscode
+```
+
+Install VS Code extensions from the list:
+
+```zsh
+make vscode-ext
+```
+
+Export your current VS Code extensions to the list:
+
+```zsh
+make vscode-ext-export
+```
 
 ## .zshrc
 
 - z shell config, alias, functions
 
-## BrewFile
-
-auto install formulae and cask \
-run following command from directory that `BrewFile` is located
+Set up zsh configuration:
 
 ```zsh
-brew bundle
+make zsh
 ```
 
-> caution: mactex require whole a lot of time, so install seperately
-
-## Symlink creation
-
-1. remove existing dotfiles (if they exist)
+Re-source your .zshrc file:
 
 ```zsh
-rm -rf ~/.zshrc
-rm -rf /Users/${USER}/.config/karabiner/karabiner.json
-rm -rf /Users/${USER}/Library/Application\ Support/Code/User/settings.json
-rm -rf /Users/${USER}/Library/Application\ Support/Code/User/keybindings.json
+make szsh
 ```
 
-2. create symlink for dotfiles
+## SSH Wrapper
+
+Set up SSH wrapper script (sc):
 
 ```zsh
-ln -s {path for repo clone}/.zshrc /Users/${USER}/.zshrc
-ln -s {path for repo clone}/karabiner/karabiner.json /Users/${USER}/.config/karabiner/karabiner.json
-ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Cursor/User/settings.json
-ln -s {path for repo clone}/vscode/settings.json /Users/${USER}/Library/Application\ Support/Cursor/User/keybindings.json
+make ssh
 ```
+
+## Markdown to PDF Converter
+
+Install the markdown to PDF conversion tool:
+
+```zsh
+make md2pdf
+```
+
+> caution: mactex requires a lot of time, so install separately

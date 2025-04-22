@@ -1,9 +1,9 @@
 # Define project root path
 DOTFILES_ROOT := $(shell pwd)
 
-.PHONY: vscode-ext-export vscode-ext vscode zsh szsh karabiner ssh
+.PHONY: vscode-ext-export vscode-ext vscode zsh szsh karabiner ssh md2pdf aerospace all
 
-all: vscode-ext vscode zsh karabiner ssh
+all: vscode-ext vscode zsh karabiner ssh aerospace
 
 vscode-ext-export:
 	@echo "Exporting vscode extensions..."
@@ -68,3 +68,11 @@ md2pdf:
 	@sudo cp $(DOTFILES_ROOT)/script/md2pdf/markdown-to-pdf.py /usr/local/bin/md2pdf
 	@sudo chmod +x /usr/local/bin/md2pdf
 	@echo "md2pdf script installed successfully"
+
+aerospace:
+	@echo "Setting up Aerospace configuration..."
+	@echo "Remove the old symlink if it exists..."
+	@rm -f $(HOME)/.aerospace.toml
+	@echo "Create Aerospace configuration symlink..."
+	@ln -sf $(DOTFILES_ROOT)/.aerospace.toml $(HOME)/.aerospace.toml
+	@echo "Aerospace configuration setup complete"

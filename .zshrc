@@ -25,53 +25,26 @@ export PATH=/opt/homebrew/sbin:$PATH
 # may be you need to execute following cmd to make symbolic link
 # sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 # sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-export JAVA_HOME_17=$(/usr/libexec/java_home -v 17)
-export JAVA_HOME_11=$(/usr/libexec/java_home -v 11)
+# export JAVA_HOME_17=$(/usr/libexec/java_home -v 17)
+# export JAVA_HOME_11=$(/usr/libexec/java_home -v 11)
 
 # setup java version
-export JAVA_HOME=$JAVA_HOME_17
+# export JAVA_HOME=$JAVA_HOME_17
 
-# pyenv configuration
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-# export custom script path
+# export custom script path so that we can use custom scripts in any directorys
 export PATH="$HOME/dotfiles/scripts:$PATH"
-
-# locale configuration during ssh login
-# export LANG=ko_KR.UTF-8
-# export LC_ALL=ko_KR.UTF-8
 
 # bat configuration
 export BAT_THEME="ansi"
 
 # go configuration
-export GOROOT="/opt/homebrew/opt/go@1.24/libexec"
-export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"
+export GOROOT="/opt/homebrew/opt/go/libexec"
+export PATH="/opt/homebrew/opt/go/bin:$PATH"
 export PATH=$PATH:$HOME/go/bin
-
-# starship
-eval "$(starship init zsh)"
-
-# the fuck
-eval $(thefuck --alias)
-
 
 # zoxide configuration
 eval "$(zoxide init zsh)"
 
-# fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-export FZF_CTRL_T_OPTS="
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # Include hidden files
-bindkey "ç" fzf-cd-widget # Fix for ALT+C on Mac
-
-# fh - search in your command history and execute selected command
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
 
 # ========================= alias =========================
 # git
@@ -131,25 +104,11 @@ alias dstart='docker start -i'
 alias dps='docker ps -a'
 alias da='docker attach'
 
-# source ~/.zshrc
-alias srcz='source ~/.zshrc'
-
 # docker mysql
 alias dmysql='docker exec -it mysql-container mysql -u root -p'
 
 # docker postgres
 alias dpsql='docker exec -it postgres-container psql -U root'
-
-
-
-# kubectl completion
-source <(kubectl completion zsh)
-
-# kubectl alias
-alias k='kubectl'
-alias kg='kubectl get'
-alias kd='kubectl describe'
-alias kx='kubectl exec -it'
 
 # Added by Windsurf
 export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
