@@ -42,7 +42,7 @@ def create_intermediate_markdown(input_file, metadata):
         "affil": "Dept. of System Management Engineering\\\\Dept. of Software\\\\Sungkyunkwan University",
         "abstract": "",
         "korean": False,
-        "bibfile": "/Users/hyzoon/dotfiles/script/bib.bib",
+        "bibfile": "/Users/hyzoon/dotfiles/script/md2pdf/bib.bib",
         "toc": True,
         "output": "output.pdf",  # Output file name
     }
