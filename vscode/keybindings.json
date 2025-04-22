@@ -67,11 +67,6 @@
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
-        "when": "!activeEditorGroupEmpty"
-    },
 
     // open project manager list
     {
@@ -88,29 +83,6 @@
         }
     },
     {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "cmd+r alt+cmd+left",
-        "command": "-workbench.action.previousEditorInGroup"
-    },
-    {
-        "key": "shift+cmd+o",
-        "command": "-editor.action.accessibleViewGoToSymbol",
-        "when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
-    },
-    {
-        "key": "shift+cmd+o",
-        "command": "-workbench.action.terminal.openDetectedLink",
-        "when": "terminalFocus && terminalHasBeenCreated"
-    },
-    {
-        "key": "shift+cmd+o",
-        "command": "-workbench.action.gotoSymbol",
-        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
-    },
-    {
         "key": "cmd+o",
         "command": "-workbench.action.files.openFolderViaWorkspace",
         "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
@@ -120,15 +92,8 @@
         "command": "workbench.action.files.openFolder"
     },
     {
-        "key": "cmd+i",
-        "command": "composerMode.agent"
-    },
-    {
         "key": "cmd+l",
-        "command": "composerMode.chat"
-    },
-    {
-        "key": "cmd+k",
-        "command": "composerMode.edit"
+        "command": "workbench.panel.chat",
+        "when": "workbench.panel.chat.view.copilot.active"
     }
 ]

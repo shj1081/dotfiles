@@ -1,6 +1,6 @@
 {
     // theme
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "GitHub Dark",
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit", // sort imports
         "source.addMissingImports": "explicit", // add missing imports
@@ -174,7 +174,6 @@
     "git.autofetch": true,
     "markdown-preview-enhanced.previewTheme": "monokai.css",
     "C_Cpp.default.cppStandard": "gnu++11",
-    "workbench.colorTheme": "Anysphere",
     "diffEditor.ignoreTrimWhitespace": false,
     "[typst]": {
         "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
@@ -199,5 +198,5 @@
     "cursor.cpp.enablePartialAccepts": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.formatOnSave": true,
-    "cursor.cpp.disabledLanguages": ["plaintext"]
+    "github.copilot.nextEditSuggestions.enabled": true,
 }

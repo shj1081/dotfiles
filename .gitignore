@@ -1,4 +1,10 @@
-# ssh configs
-servers.yaml
+# file without extension
+*
+!*.*
+!*/
 
+# macos
 .DS_Store
+
+# credentials
+servers.yaml
