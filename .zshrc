@@ -115,11 +115,14 @@ alias bi='brew install'
 alias bui='brew uninstall'
 
 
-# python
-alias py='python3'
+# uv python
+alias uvr="uv run" # run a command or script
+alias py="uv run --no-project"
+alias uvinit="uv init" # create a new project
+alias uva="uv add" # set an alias for uv command
+alias uvd="uv remove" # remove an alias
+alias uvp="uv pip" # install a package
 
-# cursor to code
-# alias code='cursor'
 
 # docker
 alias d='docker'
@@ -127,6 +130,9 @@ alias dstop='docker stop'
 alias dstart='docker start -i'
 alias dps='docker ps -a'
 alias da='docker attach'
+
+# source ~/.zshrc
+alias srcz='source ~/.zshrc'
 
 # docker mysql
 alias dmysql='docker exec -it mysql-container mysql -u root -p'
@@ -147,3 +153,4 @@ alias kx='kubectl exec -it'
 
 # Added by Windsurf
 export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
+

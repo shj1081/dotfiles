@@ -1,68 +1,64 @@
-# Homebrew Taps
 tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "nikitabobko/tap"
-
-# Command-Line Tools
-brew "bat"                      # Clone of cat(1) with syntax highlighting and Git integration
-brew "cmake"                    # Cross-platform make
-brew "fzf"                      # Command-line fuzzy finder written in Go
-brew "lsd"                      # Clone of ls with colorful output, file type icons, and more
-brew "ripgrep"                  # Search tool like grep and The Silver Searcher
-brew "zoxide"                   # Shell extension to navigate your filesystem faster
-
-# Development Tools
-brew "cask"                     # Emacs dependency management
-brew "node"                     # Platform built on V8 to build network applications
-brew "openjdk@11"               # Development kit for the Java programming language
-brew "openjdk@17"               # Development kit for the Java programming language
-brew "pandoc"                   # Swiss-army knife of markup format conversion
-brew "pandoc-crossref"          # Pandoc filter for numbering and cross-referencing
-brew "pkgconf"                  # Package compiler and linker metadata toolkit
-brew "pyenv"                    # Python version management
-brew "pyenv-virtualenv"         # Pyenv plugin to manage virtualenv
-brew "yarn"                     # JavaScript package manager
-
-# Shell Enhancements
-brew "zsh-autosuggestions"      # Fish-like fast/unobtrusive autosuggestions for zsh
-brew "zsh-syntax-highlighting"  # Fish shell like syntax highlighting for zsh
-
-# GUI Applications
-
-## Development
-cask "visual-studio-code@insiders" # Code editor
-cask "cursor"                      # Write, edit, and chat about your code with AI
-cask "docker"                      # App to build and share containerised applications and microservices
-cask "postman"                     # Collaboration platform for API development
-cask "warp"                        # Rust-based terminal
-
-## Productivity
-cask "notion"                      # App to write, plan, collaborate, and get organised
-cask "raycast"                     # Control your tools with a few keystrokes
-cask "slack"                       # Team communication and collaboration software
-cask "zoom"                        # Video communication and virtual meeting platform
-
-## System Utilities
-cask "aerospace"                   # AeroSpace is an i3-like tiling window manager for macOS
-cask "appcleaner"                  # Application uninstaller
-cask "karabiner-elements"          # Keyboard customiser
-cask "keka"                        # File archiver
-cask "keyboardcleantool"           # Blocks all Keyboard and TouchBar input
-cask "keycastr"                    # Open-source keystroke visualiser
-
-## Fonts
-cask "font-jetbrains-mono"         # JetBrains Mono font
-cask "font-meslo-lg-nerd-font"     # Meslo LG Nerd Font
-
-## Entertainment
-cask "spotify"                     # Music streaming service
-
-## Browsers
-cask "zen-browser"                 # Gecko based web browser
-
-## Virtualization
-cask "utm"                         # Virtual machines UI using QEMU
-
-## Text Utilities
-cask "mactex"                      # Full TeX Live distribution with GUI applications
+brew "argocd"
+brew "bat"
+brew "emacs"
+brew "cask"
+brew "cmake"
+brew "expect"
+brew "fzf"
+brew "go"
+brew "golang-migrate"
+brew "helm"
+brew "hugo"
+brew "jq"
+brew "kind"
+brew "kubernetes-cli"
+brew "lsd"
+brew "node"
+brew "oath-toolkit"
+brew "openjdk@11"
+brew "openjdk@17"
+brew "pandoc"
+brew "pandoc-crossref"
+brew "pkgconf"
+brew "ripgrep"
+brew "rust"
+brew "starship"
+brew "thefuck"
+brew "typst"
+brew "uv"
+brew "yarn"
+brew "zoxide"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+cask "aerospace"
+cask "appcleaner"
+cask "claude"
+cask "cursor"
+cask "font-jetbrains-mono"
+cask "font-meslo-lg-nerd-font"
+cask "ghostty"
+cask "google-chrome"
+cask "insomnia"
+cask "karabiner-elements"
+cask "keka"
+cask "keyboardcleantool"
+cask "keycastr"
+cask "mactex"
+cask "notion"
+cask "obsidian"
+cask "orbstack"
+cask "postman"
+cask "raycast"
+cask "slack"
+cask "spotify"
+cask "utm"
+cask "visual-studio-code@insiders"
+cask "warp"
+cask "zen-browser"
+cask "zoom"
+vscode "github.copilot"
+vscode "github.copilot-chat"

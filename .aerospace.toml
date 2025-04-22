@@ -17,7 +17,7 @@
 # start options
 after-login-command = []
 after-startup-command = []
-start-at-login = false
+start-at-login = true
 
 # Normalizations
 enable-normalization-flatten-containers = true
