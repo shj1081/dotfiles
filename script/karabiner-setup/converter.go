@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -111,7 +110,7 @@ type SimpleCondition struct {
 func readKarabinerConfig(filePath string) (KarabinerConfig, error) {
 	var config KarabinerConfig
 
-	data, err := ioutil.ReadFile(filePath)
+	data, err := os.ReadFile(filePath)
 	if err != nil {
 		return config, err
 	}
@@ -128,7 +127,7 @@ func readKarabinerConfig(filePath string) (KarabinerConfig, error) {
 func readSimpleRules(filePath string) (SimpleRulesConfig, error) {
 	var config SimpleRulesConfig
 
-	data, err := ioutil.ReadFile(filePath)
+	data, err := os.ReadFile(filePath)
 	if err != nil {
 		return config, err
 	}
@@ -148,7 +147,7 @@ func writeKarabinerConfig(config KarabinerConfig, filePath string) error {
 		return err
 	}
 
-	err = ioutil.WriteFile(filePath, data, 0644)
+	err = os.WriteFile(filePath, data, 0644)
 	if err != nil {
 		return err
 	}
@@ -303,7 +302,7 @@ func convertRule(simpleRule SimpleRule) Rule {
 func main() {
 	// Define command line flags
 	yamlPathPtr := flag.String("yaml", "", "Path to simplified YAML rules file")
-	karabinerPathPtr := flag.String("karabiner", filepath.Join(os.Getenv("HOME"), "dotfile", "karabiner", "karabiner.json"), "Path to karabiner.json")
+	karabinerPathPtr := flag.String("karabiner", filepath.Join(os.Getenv("HOME"), "dotfiles", "karabiner", "karabiner.json"), "Path to karabiner.json")
 	outputPathPtr := flag.String("output", "", "Path for output karabiner.json (defaults to same as input)")
 
 	flag.Parse()
