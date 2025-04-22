@@ -44,7 +44,7 @@ type Config struct {
 
 func main() {
 	// 서버 정보 파일 경로
-	const serverFile = "/Users/hyzoon/dotfiles/script/servers.yaml"
+	const serverFile = "/Users/hyzoon/dotfiles/script/ssh-wrapper/servers.yaml"
 	data, err := os.ReadFile(serverFile)
 	if err != nil {
 		fmt.Printf("Server file '%s' not found.\n", serverFile)
