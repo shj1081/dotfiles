@@ -1,63 +1,58 @@
-# Karabiner Complex Key Mappings
+# Karabiner Elements Custom Configuration
 
-This file configures custom key mappings to enhance keyboard efficiency, enabling faster navigation, window management, and application launching. Below is a breakdown of the main key mappings configured in this Karabiner-Elements setup.
+## Overview
 
-## Key Mappings Overview
+This setup creates a powerful keyboard shortcut system using custom modifiers and layers for **aerospace**:
 
-### 1. **Right Command to F18**
+- **Utility Hyper Key**: Caps Lock is remapped to function as Escape when tapped, and as a "Utility Hyper" modifier when held
+- **Window Hyper Key**: Tab is remapped to function as Tab when tapped, and as a "Window Hyper" modifier when held
+- **Right Command**: Remapped to F18 for additional customization options
 
--   **Key:** `Right Command`
--   **Remap:** `F18`
--   **Usage:** F18 act as change the Input source language
+## Key Features
 
-### 2. **Tab Key - Window Hyper Key Layer**
+> Window management is acheived using **aerospace**
 
--   **Key:** `Tab`
--   **Tap Behavior:** Acts as a normal `Tab` key.
--   **Hold Behavior:** Activates the `window_hyper` layer for window management shortcuts.
+### Utility Hyper Key (Caps Lock)
 
-#### Window Hyper Key Layer Mappings (Hold Tab):
+- **Window Focus**: `Hyper + j/k/l/i` → Focus window left/down/right/up
+- **Service/Exec Mode**: `Hyper + semicolon/o` → Switch to service/exec mode
+- **Arrow Keys Sublayer**: `Hyper + s` activates a sublayer where:
+  - `j/k/l/i` → Left/Down/Right/Up arrows
+  - `h/semicolon` → Option+Left/Right arrows for word jumping
 
--   **`j`**: Move window to left half.
--   **`l`**: Move window to right half.
--   **`k`**: Resize window to almost full screen.
--   **`i`**: Maximize window fully.
--   **`1` to `4`**: Switch desktops (Control + 1, 2, 3, or 4).
--   **`w`**: Move to desktop left.
--   **`e`**: Move to desktop right.
+### Window Hyper Key (Tab)
 
-### 3. **Caps Lock Key - Utility Hyper Key Layer**
+- **Window Movement**: `Window-Hyper + j/k/l/i` → Move window left/down/right/up
+- **Window Management**: 
+  - `Window-Hyper + f` → Toggle fullscreen
+  - `Window-Hyper + slash` → Toggle tiling
+  - `Window-Hyper + comma` → Toggle accordion mode
+  - `Window-Hyper + -/=` → Resize smart -50/+50
+- **Desktop Navigation**: `Window-Hyper + 1-8` → Switch to desktop 1-8
+- **Window Join Sublayer**: `Window-Hyper + w` activates a sublayer where:
+  - `j/k/l/i` → Join window left/down/right/up
+- **Window to Workspace Sublayer**: `Window-Hyper + m` activates a sublayer where:
+  - `1-8` → Move window to desktop 1-8 and follow
 
--   **Key:** `Caps Lock`
--   **Tap Behavior:** Acts as `Escape`.
--   **Hold Behavior:** Activates `util_hyper` layer for application and arrow navigation sublayers.
+## Requirements
 
-#### Utility Hyper Key Sublayers
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/) installed
+- [Aerospace](https://github.com/nikitabobko/AeroSpace) installed
 
--   **`util_hyper + o`**: Application Launcher
+## Setup
 
-    -   **`b`**: Open Arc browser.
-    -   **`k`**: Open KakaoTalk.
-    -   **`,`**: Open Warp terminal.
-    -   **`f`**: Open Finder.
-    -   **`c`**: Open Calendar.
-    -   **`m`**: Open Spark email client.
-    -   **`p`**: Open Spotify.
-    -   **`v`**: Open Visual Studio Code.
+1. Install Karabiner Elements
+2. Run the following command to create symlinks:
+```bash
+# from repo's root directory
+make karabiner
+```
 
--   **`util_hyper + s`**: Arrow Key Navigation
-    -   **`j`**: Left Arrow.
-    -   **`l`**: Right Arrow.
-    -   **`i`**: Up Arrow.
-    -   **`k`**: Down Arrow.
+## Customization
 
-## Usage
+The configuration is defined in YAML in `/script/karabiner-setup/rules.yaml` and compiled to JSON using the karabiner-setup tool.
 
-1. **Activate Layers**: Hold the designated key (Tab or Caps Lock) to enable the respective layer, and press the mapped keys to perform the desired actions.
-2. **Single Press**: Tapping Caps Lock or Tab without holding will retain their original function (Escape or Tab).
-
-This configuration enables efficient window management and application launching directly from the keyboard, enhancing productivity with minimal hand movement.
-
-## Troubleshooting
-
-If the key mappings are not working as expected, delete symlink and recreate.
+To modify the configuration:
+1. Edit `/script/karabiner-setup/rules.yaml`
+2. Compile using `cd script/karabiner-setup && go run converter.go`
+3. Run `make karabiner` to update the symlinks
