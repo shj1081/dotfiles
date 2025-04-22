@@ -1,4 +1,0 @@
--   bartender (hide menubar items)
--   aldente pro (optimized battery charge)
--   cleanshot x (screenshot tool)
--   spark (email app)
