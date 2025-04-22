@@ -59,3 +59,12 @@ ssh:
 	@sudo cp $(DOTFILES_ROOT)/script/ssh-wrapper/sc /usr/local/bin/
 	@sudo chmod +x /usr/local/bin/sc
 	@echo "SSH wrapper script installed successfully"
+
+md2pdf:
+	@echo "Settingup md2pdf script..."
+	@if [ -f /usr/local/bin/md2pdf ]; then \
+		sudo rm -f /usr/local/bin/md2pdf; \
+	fi
+	@sudo cp $(DOTFILES_ROOT)/script/md2pdf/markdown-to-pdf.py /usr/local/bin/md2pdf
+	@sudo chmod +x /usr/local/bin/md2pdf
+	@echo "md2pdf script installed successfully"
