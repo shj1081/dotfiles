@@ -24,7 +24,7 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -41,7 +41,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 # accordion-padding
-accordion-padding = 30
+accordion-padding = 10
 
 # keyboard layout
 [key-mapping]
@@ -118,18 +118,16 @@ alt-2 = 'workspace 2' # browser
 alt-3 = 'workspace 3' # agenda
 alt-4 = 'workspace 4' # finder / preview
 alt-5 = 'workspace 5' # communication
-alt-6 = 'workspace 6' # notion
-alt-7 = 'workspace 7' # mac retina display
-alt-8 = 'workspace 8' # mac retina display
+alt-6 = 'workspace 6' # play
+alt-shift-h = 'workspace-back-and-forth'
+# alt-7 = 'workspace 7' # mac retina display
+# alt-8 = 'workspace 8' # mac retina display
 
 # Fullscreen (binded to karabiner-window_hyper)
 alt-shift-f = 'fullscreen'
 
 # Switch to service mode (binded to karabiner-window_hyper)
 alt-shift-semicolon = 'mode service'
-
-# Switch to exec mode (binded to karabiner-window_hyper)
-alt-shift-o = 'mode exec'
 
 # Move window to workspace (binded to karabiner-window_hyper_sublayer_m)
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -138,8 +136,8 @@ alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+# alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+# alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 
 # move window back to original workspace
 
@@ -153,66 +151,16 @@ f = [
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# Exec mode
-[mode.exec.binding]
-esc = 'mode main'
-n = ['''exec-and-forget open -a 'Notion.app'
-''', 'mode main']
-b = ['''exec-and-forget open -a 'Arc.app'
-''', 'mode main']
-k = ['''exec-and-forget open -a 'KakaoTalk.app'
-''', 'mode main']
-comma = ['''exec-and-forget open -a 'Warp.app'
-''', 'mode main']
-f = ['''exec-and-forget open -a 'Finder.app'
-''', 'mode main']
-c = ['''exec-and-forget open -a 'Calendar.app'
-''', 'mode main']
-m = ['''exec-and-forget open -a 'Spark Mail.app'
-''', 'mode main']
-s = ['''exec-and-forget open -a 'Slack.app'
-''', 'mode main']
-p = ['''exec-and-forget open -a 'Spotify.app'
-''', 'mode main']
-v = ['''exec-and-forget open -a 'Visual Studio Code - Insiders.app'
-''', 'mode main']
-t = ['''exec-and-forget open -a 'Todoist.app'
-''', 'mode main']
 
+# On window detected 
 
-# On window detected
+# Move to workspace
 [[on-window-detected]]
-if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
-run = 'layout floating'
+if.app-id = 'com.microsoft.VSCode' # vscode
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
-if.app-id = 'com.riotgames.RiotGames.RiotClient'
-run = 'layout floating'
-
-
-[[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.kakao.KakaoTalkMac'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.iWork.Keynote'
-run = ['layout floating', 'move-node-to-workspace 4']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Preview'
-run = ['layout floating', 'move-node-to-workspace 4']
-
-[[on-window-detected]]
-if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCodeInsiders'
+if.app-id = 'com.exafunction.windsurf' # windsurf
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
@@ -224,11 +172,16 @@ if.app-id = 'com.jetbrains.intellij' # intellij
 run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser' # arc
+if.app-id = 'dev.warp.Warp-Stable' # WARP
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen' # zen browser
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
+if.app-id = 'company.thebrowser.Browser' # Arc Browser
+check-further-callbacks = true
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
@@ -236,16 +189,24 @@ if.app-id = 'com.apple.iCal'       # calendar
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
+if.app-id = 'com.apple.reminders'  # reminders
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
 if.app-id = 'notion.id'            # notion
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'
-run = ['move-node-to-workspace 3']
+if.app-id = 'com.apple.finder' # finder
+run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = ['move-node-to-workspace 4']
+if.app-id = 'com.apple.iWork.Keynote' # keynote
+run = ['layout floating', 'move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview' # preview
+run = ['layout floating', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap' # slack
@@ -259,6 +220,33 @@ run = ['move-node-to-workspace 5']
 if.app-id = 'com.spotify.client'   # spotify
 run = ['move-node-to-workspace 6']
 
+# Floating windows
+[[on-window-detected]]
+if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.riotgames.RiotGames.RiotClient' # League of Legends launcher
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.getcleanshot.app-setapp' # CleanShot X
+check-further-callbacks = true
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen' # Zen Browser pip
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.kakao.KakaoTalkMac'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = 'layout floating'
+
 # Workspace to monitor force assignment
 [workspace-to-monitor-force-assignment]
 1 = 'main'
@@ -266,4 +254,4 @@ run = ['move-node-to-workspace 6']
 3 = 'main'
 4 = 'main'
 5 = 'main'
-6 = 'main'
+6 = 'Built-in Retina Display'

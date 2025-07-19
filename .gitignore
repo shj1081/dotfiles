@@ -9,3 +9,6 @@
 
 # credentials
 servers.yaml
+
+# vscode
+.vscode

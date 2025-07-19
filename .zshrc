@@ -113,3 +113,20 @@ alias dpsql='docker exec -it postgres-container psql -U root'
 # Added by Windsurf
 export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
 
+# mise
+eval "$(mise activate zsh)"
+# Added by Windsurf
+export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
+
+# vpn function
+function vpn() {
+  local warp_status=$(warp-cli status | grep "Status update" | awk '{print $3}')
+
+  if [[ "$warp_status" == "Connected" ]]; then
+    echo "Disconnecting WARP..."
+    warp-cli disconnect
+  else
+    echo "Connecting WARP..."
+    warp-cli connect
+  fi
+}

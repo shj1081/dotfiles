@@ -1,4 +1,4 @@
-#!/Users/hyzoon/.pyenv/versions/3.9.5/bin/python
+#!/Users/hyzoon/.local/share/mise/installs/python/3.12.3/bin/python
 
 """
 This script converts Markdown files to PDFs using Pandoc with enhanced metadata handling.

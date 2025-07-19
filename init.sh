@@ -108,7 +108,7 @@ else
     print_info "BrewFile not found. Installing essential packages..."
     
     # Install essential CLI tools
-    brew install git zoxide bat thefuck lsd
+    brew install git zoxide bat lsd
     
     # Install window management tools
     brew install koekeishiya/formulae/yabai nikitabobko/tap/aerospace
@@ -203,11 +203,6 @@ print_info "This may take a while..."
 make vscode-ext
 print_success "VSCode extensions installed"
 
-# Setup Aerospace service
-print_header "Setting up Aerospace window manager"
-print_info "Starting Aerospace service..."
-brew services start nikitabobko/tap/aerospace
-print_success "Aerospace service started"
 
 # Final instructions
 print_header "Setup Complete!"

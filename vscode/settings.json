@@ -138,7 +138,11 @@
     ],
 
     // project manager gitbase folder
-    "projectManager.git.baseFolders": ["/Users/hyzoon/git"],
+    "projectManager.git.baseFolders": [
+        "/Users/hyzoon/scg",
+        "/Users/hyzoon/skku",
+        "/Users/hyzoon/scratch"
+    ],
 
     // leetcode settings
     "leetcode.workspaceFolder": "/Users/hyzoon/leetcode",
@@ -197,6 +201,12 @@
     ],
     "cursor.cpp.enablePartialAccepts": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "editor.formatOnSave": true,
     "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.iconTheme": "symbols",
+    "explorer.compactFolders": false,
+    "editor.formatOnSave": true,
+    "remote.SSH.remotePlatform": {
+        "coder-vscode.coder.hyzoon.dev--shj1081--test-docker.main": "linux"
+    },
+    "remote.SSH.connectTimeout": 1800
 }

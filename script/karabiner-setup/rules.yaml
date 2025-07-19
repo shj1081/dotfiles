@@ -1,702 +1,614 @@
-# filepath: /Users/hyzoon/dotfiles/script/karabiner-setup/rules.yaml
-# karabiner-rules.yaml
-# Only modifies the rules section of karabiner.json
 rules:
-  - description: "right cmd to f18"
-    manipulators:
-      - type: "basic"
-        from:
-          key_code: "right_command"
-        optional_mods: ["any"]
-        to:
-          - key_code: "f18"
+    - description: 'right cmd to f19'
+      manipulators:
+          - type: 'basic'
+            from:
+                key_code: 'right_command'
+            optional_mods: ['any']
+            to:
+                - key_code: 'f19'
 
-  - description: "Remap Caps_lock to util_hyper key when held, escape when tapped"
-    manipulators:
-      - type: "basic"
-        from:
-          key_code: "caps_lock"
-        to:
-          - set_variable:
-              name: "util_hyper"
-              value: 1
-        to_after_key_up:
-          - set_variable:
-              name: "util_hyper"
-              value: 0
-        to_if_alone:
-          - key_code: "escape"
+    - description: 'Remap Caps_lock to window_hyper key when held, escape when tapped'
+      manipulators:
+          - type: 'basic'
+            from:
+                key_code: 'caps_lock'
+            to:
+                - set_variable:
+                      name: 'window_hyper'
+                      value: 1
+            to_after_key_up:
+                - set_variable:
+                      name: 'window_hyper'
+                      value: 0
+            to_if_alone:
+                - key_code: 'escape'
 
-  - description: "Remap Tab to window_hyper key when held, Tab when tapped"
-    manipulators:
-      - type: "basic"
-        from:
-          key_code: "tab"
-        to:
-          - set_variable:
-              name: "window_hyper"
-              value: 1
-        to_after_key_up:
-          - set_variable:
-              name: "window_hyper"
-              value: 0
-        to_if_alone:
-          - key_code: "tab"
+    - description: 'Remap Tab to space_hyper key when held, Tab when tapped'
+      manipulators:
+          - type: 'basic'
+            from:
+                key_code: 'tab'
+            to:
+                - set_variable:
+                      name: 'space_hyper'
+                      value: 1
+            to_after_key_up:
+                - set_variable:
+                      name: 'space_hyper'
+                      value: 0
+            to_if_alone:
+                - key_code: 'tab'
 
-  - description: "util_hyper key mappings - focus window"
-    manipulators:
-      - type: "basic"
-        description: "focus left"
-        from:
-          key_code: "j"
-          optional_mods: ["any"]
-        to:
-          - key_code: "j"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 0
+    - description: 'window_hyper Key sublayer s - move window'
+      manipulators:
+          - type: 'basic'
+            description: 'Toggle window_hyper_sublayer_s'
+            from:
+                key_code: 's'
+                optional_mods: ['any']
+            to:
+                - set_variable:
+                      name: 'window_hyper_sublayer_s'
+                      value: 1
+            to_after_key_up:
+                - set_variable:
+                      name: 'window_hyper_sublayer_s'
+                      value: 0
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
 
-      - type: "basic"
-        description: "focus down"
-        from:
-          key_code: "k"
-          optional_mods: ["any"]
-        to:
-          - key_code: "k"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 0
+          - type: 'basic'
+            description: 'move window left'
+            from:
+                key_code: 'j'
+                optional_mods: ['any']
+            to:
+                - key_code: 'j'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 1
 
-      - type: "basic"
-        description: "focus right"
-        from:
-          key_code: "l"
-          optional_mods: ["any"]
-        to:
-          - key_code: "l"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 0
+          - type: 'basic'
+            description: 'move window down'
+            from:
+                key_code: 'k'
+                optional_mods: ['any']
+            to:
+                - key_code: 'k'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 1
 
-      - type: "basic"
-        description: "focus up"
-        from:
-          key_code: "i"
-          optional_mods: ["any"]
-        to:
-          - key_code: "i"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 0
+          - type: 'basic'
+            description: 'move window right'
+            from:
+                key_code: 'l'
+                optional_mods: ['any']
+            to:
+                - key_code: 'l'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 1
 
-      - type: "basic"
-        description: "switch to service mode"
-        from:
-          key_code: "semicolon"
-          optional_mods: ["any"]
-        to:
-          - key_code: "semicolon"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 0
+          - type: 'basic'
+            description: 'move window up'
+            from:
+                key_code: 'i'
+                optional_mods: ['any']
+            to:
+                - key_code: 'i'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 1
 
-      - type: "basic"
-        description: "switch to exec mode"
-        from:
-          key_code: "o"
-          optional_mods: ["any"]
-        to:
-          - key_code: "o"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
+    - description: 'window_hyper Key sublayer w - join window'
+      manipulators:
+          - type: 'basic'
+            description: 'Toggle window_hyper_sublayer_w'
+            from:
+                key_code: 'w'
+                optional_mods: ['any']
+            to:
+                - set_variable:
+                      name: 'window_hyper_sublayer_w'
+                      value: 1
+            to_after_key_up:
+                - set_variable:
+                      name: 'window_hyper_sublayer_w'
+                      value: 0
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
 
-  - description: "window_hyper key mappings - move window"
-    manipulators:
-      - type: "basic"
-        description: "move window left"
-        from:
-          key_code: "j"
-          optional_mods: ["any"]
-        to:
-          - key_code: "j"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 0
+          - type: 'basic'
+            description: 'join window left'
+            from:
+                key_code: 'j'
+                optional_mods: ['any']
+            to:
+                - key_code: 'j'
+                  modifiers: ['left_option', 'left_shift', 'left_control']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 1
 
-      - type: "basic"
-        description: "move window down"
-        from:
-          key_code: "k"
-          optional_mods: ["any"]
-        to:
-          - key_code: "k"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 0
+          - type: 'basic'
+            description: 'join window down'
+            from:
+                key_code: 'k'
+                optional_mods: ['any']
+            to:
+                - key_code: 'k'
+                  modifiers: ['left_option', 'left_shift', 'left_control']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 1
 
-      - type: "basic"
-        description: "move window right"
-        from:
-          key_code: "l"
-          optional_mods: ["any"]
-        to:
-          - key_code: "l"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 0
+          - type: 'basic'
+            description: 'join window right'
+            from:
+                key_code: 'l'
+                optional_mods: ['any']
+            to:
+                - key_code: 'l'
+                  modifiers: ['left_option', 'left_shift', 'left_control']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 1
 
-      - type: "basic"
-        description: "move window up"
-        from:
-          key_code: "i"
-          optional_mods: ["any"]
-        to:
-          - key_code: "i"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 0
+          - type: 'basic'
+            description: 'join window up'
+            from:
+                key_code: 'i'
+                optional_mods: ['any']
+            to:
+                - key_code: 'i'
+                  modifiers: ['left_option', 'left_shift', 'left_control']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 1
 
-      - type: "basic"
-        description: "full screen"
-        from:
-          key_code: "f"
-          optional_mods: ["any"]
-        to:
-          - key_code: "f"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+    - description: 'window_hyper + f for fullscreen'
+      manipulators:
+          - type: 'basic'
+            description: 'fullscreen'
+            from:
+                key_code: 'f'
+                optional_mods: ['any']
+            to:
+                - key_code: 'f'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
 
-      - type: "basic"
-        description: "toggle tiling"
-        from:
-          key_code: "slash"
-          optional_mods: ["any"]
-        to:
-          - key_code: "slash"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+    - description: 'space_hyper + 1~8: desktop movement (alt + 1~8)'
+      manipulators:
+          - type: 'basic'
+            description: 'space_hyper + 1: move to desktop 1'
+            from:
+                key_code: '1'
+                optional_mods: ['any']
+            to:
+                - key_code: '1'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "toggle accordian"
-        from:
-          key_code: "comma"
-          optional_mods: ["any"]
-        to:
-          - key_code: "comma"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + 2: move to desktop 2'
+            from:
+                key_code: '2'
+                optional_mods: ['any']
+            to:
+                - key_code: '2'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "resize smart -50"
-        from:
-          key_code: "hyphen"
-          optional_mods: ["any"]
-        to:
-          - key_code: "hyphen"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + 3: move to desktop 3'
+            from:
+                key_code: '3'
+                optional_mods: ['any']
+            to:
+                - key_code: '3'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "resize smart +50"
-        from:
-          key_code: "equal_sign"
-          optional_mods: ["any"]
-        to:
-          - key_code: "equal_sign"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + 4: move to desktop 4'
+            from:
+                key_code: '4'
+                optional_mods: ['any']
+            to:
+                - key_code: '4'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-  - description: "window_hyper workspace navigation"
-    manipulators:
-      - type: "basic"
-        description: "desktop 1"
-        from:
-          key_code: "1"
-          optional_mods: ["any"]
-        to:
-          - key_code: "1"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + 5: move to desktop 5'
+            from:
+                key_code: '5'
+                optional_mods: ['any']
+            to:
+                - key_code: '5'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "desktop 2"
-        from:
-          key_code: "2"
-          optional_mods: ["any"]
-        to:
-          - key_code: "2"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + 6: move to desktop 6'
+            from:
+                key_code: '6'
+                optional_mods: ['any']
+            to:
+                - key_code: '6'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "desktop 3"
-        from:
-          key_code: "3"
-          optional_mods: ["any"]
-        to:
-          - key_code: "3"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + 7: move to desktop 7'
+            from:
+                key_code: '7'
+                optional_mods: ['any']
+            to:
+                - key_code: '7'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "desktop 4"
-        from:
-          key_code: "4"
-          optional_mods: ["any"]
-        to:
-          - key_code: "4"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + 8: move to desktop 8'
+            from:
+                key_code: '8'
+                optional_mods: ['any']
+            to:
+                - key_code: '8'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 0
 
-      - type: "basic"
-        description: "desktop 5"
-        from:
-          key_code: "5"
-          optional_mods: ["any"]
-        to:
-          - key_code: "5"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+    - description: 'space_hyper Key sublayer m - move window to desktop'
+      manipulators:
+          - type: 'basic'
+            description: 'Toggle space_hyper_sublayer_m'
+            from:
+                key_code: 'm'
+                optional_mods: ['any']
+            to:
+                - set_variable:
+                      name: 'space_hyper_sublayer_m'
+                      value: 1
+            to_after_key_up:
+                - set_variable:
+                      name: 'space_hyper_sublayer_m'
+                      value: 0
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper'
+                  value: 1
 
-      - type: "basic"
-        description: "desktop 6"
-        from:
-          key_code: "6"
-          optional_mods: ["any"]
-        to:
-          - key_code: "6"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + m + 1: move window to desktop 1'
+            from:
+                key_code: '1'
+                optional_mods: ['any']
+            to:
+                - key_code: '1'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "desktop 7"
-        from:
-          key_code: "7"
-          optional_mods: ["any"]
-        to:
-          - key_code: "7"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + m + 2: move window to desktop 2'
+            from:
+                key_code: '2'
+                optional_mods: ['any']
+            to:
+                - key_code: '2'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "desktop 8"
-        from:
-          key_code: "8"
-          optional_mods: ["any"]
-        to:
-          - key_code: "8"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 0
+          - type: 'basic'
+            description: 'space_hyper + m + 3: move window to desktop 3'
+            from:
+                key_code: '3'
+                optional_mods: ['any']
+            to:
+                - key_code: '3'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-  - description: "window_Hyper Key sublayer w - join window"
-    manipulators:
-      - type: "basic"
-        description: "Toggle window_Hyper sublayer_w"
-        from:
-          key_code: "w"
-          optional_mods: ["any"]
-        to:
-          - set_variable:
-              name: "window_hyper_sublayer_w"
-              value: 1
-        to_after_key_up:
-          - set_variable:
-              name: "window_hyper_sublayer_w"
-              value: 0
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + m + 4: move window to desktop 4'
+            from:
+                key_code: '4'
+                optional_mods: ['any']
+            to:
+                - key_code: '4'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "join window left"
-        from:
-          key_code: "j"
-          optional_mods: ["any"]
-        to:
-          - key_code: "j"
-            modifiers: ["left_option", "left_shift", "left_control"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + m + 5: move window to desktop 5'
+            from:
+                key_code: '5'
+                optional_mods: ['any']
+            to:
+                - key_code: '5'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "join window down"
-        from:
-          key_code: "k"
-          optional_mods: ["any"]
-        to:
-          - key_code: "k"
-            modifiers: ["left_option", "left_shift", "left_control"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + m + 6: move window to desktop 6'
+            from:
+                key_code: '6'
+                optional_mods: ['any']
+            to:
+                - key_code: '6'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "join window right"
-        from:
-          key_code: "l"
-          optional_mods: ["any"]
-        to:
-          - key_code: "l"
-            modifiers: ["left_option", "left_shift", "left_control"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + m + 7: move window to desktop 7'
+            from:
+                key_code: '7'
+                optional_mods: ['any']
+            to:
+                - key_code: '7'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-      - type: "basic"
-        description: "join window up"
-        from:
-          key_code: "i"
-          optional_mods: ["any"]
-        to:
-          - key_code: "i"
-            modifiers: ["left_option", "left_shift", "left_control"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_w"
-            value: 1
+          - type: 'basic'
+            description: 'space_hyper + m + 8: move window to desktop 8'
+            from:
+                key_code: '8'
+                optional_mods: ['any']
+            to:
+                - key_code: '8'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'space_hyper_sublayer_m'
+                  value: 1
 
-  - description: "util_hyper space sublayer - arrow keys"
-    manipulators:
-      - type: "basic"
-        description: "Toggle util_hyper space sublayer"
-        from:
-          key_code: "s"
-          optional_mods: ["any"]
-        to:
-          - set_variable:
-              name: "util_hyper_sublayer_space"
-              value: 1
-        to_after_key_up:
-          - set_variable:
-              name: "util_hyper_sublayer_space"
-              value: 0
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper"
-            value: 1
+    - description: 'window_hyper + ijkl for window focus'
+      manipulators:
+          - type: 'basic'
+            description: 'focus window left'
+            from:
+                key_code: 'j'
+                optional_mods: ['any']
+            to:
+                - key_code: 'j'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "left arrow key"
-        from:
-          key_code: "j"
-          optional_mods: ["any"]
-        to:
-          - key_code: "left_arrow"
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+          - type: 'basic'
+            description: 'focus window down'
+            from:
+                key_code: 'k'
+                optional_mods: ['any']
+            to:
+                - key_code: 'k'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "down arrow key"
-        from:
-          key_code: "k"
-          optional_mods: ["any"]
-        to:
-          - key_code: "down_arrow"
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+          - type: 'basic'
+            description: 'focus window right'
+            from:
+                key_code: 'l'
+                optional_mods: ['any']
+            to:
+                - key_code: 'l'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "right arrow key"
-        from:
-          key_code: "l"
-          optional_mods: ["any"]
-        to:
-          - key_code: "right_arrow"
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+          - type: 'basic'
+            description: 'focus window up'
+            from:
+                key_code: 'i'
+                optional_mods: ['any']
+            to:
+                - key_code: 'i'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "up arrow key"
-        from:
-          key_code: "i"
-          optional_mods: ["any"]
-        to:
-          - key_code: "up_arrow"
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+    - description: 'window_hyper + hyphen/equal_sign for resize window'
+      manipulators:
+          - type: 'basic'
+            description: 'resize window smaller'
+            from:
+                key_code: 'hyphen'
+                optional_mods: ['any']
+            to:
+                - key_code: 'hyphen'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "option left arrow key"
-        from:
-          key_code: "h"
-          optional_mods: ["any"]
-        to:
-          - key_code: "left_arrow"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+          - type: 'basic'
+            description: 'resize window larger'
+            from:
+                key_code: 'equal_sign'
+                optional_mods: ['any']
+            to:
+                - key_code: 'equal_sign'
+                  modifiers: ['left_option', 'left_shift']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-      - type: "basic"
-        description: "option right arrow key"
-        from:
-          key_code: "semicolon"
-          optional_mods: ["any"]
-        to:
-          - key_code: "right_arrow"
-            modifiers: ["left_option"]
-        conditions:
-          - type: "variable_if"
-            name: "util_hyper_sublayer_space"
-            value: 1
+    - description: 'window_hyper + comma for accordion layout'
+      manipulators:
+          - type: 'basic'
+            description: 'accordion layout'
+            from:
+                key_code: 'comma'
+                optional_mods: ['any']
+            to:
+                - key_code: 'comma'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
 
-  - description: "window_Hyper Key sublayer m - move window to workspace"
-    manipulators:
-      - type: "basic"
-        description: "Toggle window_Hyper sublayer_m"
-        from:
-          key_code: "m"
-          optional_mods: ["any"]
-        to:
-          - set_variable:
-              name: "window_hyper_sublayer_m"
-              value: 1
-        to_after_key_up:
-          - set_variable:
-              name: "window_hyper_sublayer_m"
-              value: 0
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 1 and switch to it"
-        from:
-          key_code: "1"
-          optional_mods: ["any"]
-        to:
-          - key_code: "1"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 2 and switch to it"
-        from:
-          key_code: "2"
-          optional_mods: ["any"]
-        to:
-          - key_code: "2"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 3 and switch to it"
-        from:
-          key_code: "3"
-          optional_mods: ["any"]
-        to:
-          - key_code: "3"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 4 and switch to it"
-        from:
-          key_code: "4"
-          optional_mods: ["any"]
-        to:
-          - key_code: "4"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 5 and switch to it"
-        from:
-          key_code: "5"
-          optional_mods: ["any"]
-        to:
-          - key_code: "5"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 6 and switch to it"
-        from:
-          key_code: "6"
-          optional_mods: ["any"]
-        to:
-          - key_code: "6"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 7 and switch to it"
-        from:
-          key_code: "7"
-          optional_mods: ["any"]
-        to:
-          - key_code: "7"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
-
-      - type: "basic"
-        description: "move window to desktop 8 and switch to it"
-        from:
-          key_code: "8"
-          optional_mods: ["any"]
-        to:
-          - key_code: "8"
-            modifiers: ["left_option", "left_shift"]
-        conditions:
-          - type: "variable_if"
-            name: "window_hyper_sublayer_m"
-            value: 1
+    - description: 'window_hyper + slash for tiling layout'
+      manipulators:
+          - type: 'basic'
+            description: 'tiling layout'
+            from:
+                key_code: 'slash'
+                optional_mods: ['any']
+            to:
+                - key_code: 'slash'
+                  modifiers: ['left_option']
+            conditions:
+                - type: 'variable_if'
+                  name: 'window_hyper'
+                  value: 1
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_s'
+                  value: 0
+                - type: 'variable_if'
+                  name: 'window_hyper_sublayer_w'
+                  value: 0
