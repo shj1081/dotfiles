@@ -39,13 +39,10 @@ szsh:
 
 karabiner:
 	@echo "Setting up Karabiner Elements configuration..."
-	@echo "Compiling Karabiner configuration from YAML..."
-	@(cd $(DOTFILES_ROOT)/script/karabiner-setup && go run converter.go --yaml rules.yaml)
 	@echo "Removing old configuration if it exists..."
-	@rm -f $(HOME)/.config/karabiner/karabiner.json
+	@rm -rf $(HOME)/.config/karabiner/
 	@echo "Creating Karabiner configuration symlink..."
-	@mkdir -p $(HOME)/.config/karabiner
-	@ln -sf $(DOTFILES_ROOT)/karabiner/karabiner.json $(HOME)/.config/karabiner/karabiner.json
+	@ln -sf $(DOTFILES_ROOT)/karabiner $(HOME)/.config/karabiner
 	@echo "Karabiner configuration setup complete"
 
 ssh:

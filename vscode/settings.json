@@ -141,7 +141,8 @@
     "projectManager.git.baseFolders": [
         "/Users/hyzoon/scg",
         "/Users/hyzoon/skku",
-        "/Users/hyzoon/scratch"
+        "/Users/hyzoon/scratch",
+        "/Users/hyzoon/dotfiles"
     ],
 
     // leetcode settings
