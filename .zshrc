@@ -1,35 +1,75 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# === p10k ===
+# p10k instant prompt (should be at the very top of ~/.zshrc)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh  
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# ========================= custom =========================
-# oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
+# === zinit configuration ===
+# ZINIT directory
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit."
 
+# download zinit if not exists
+if [[ ! -d "$ZINIT_HOME" ]]; then
+  mkdir -p "$ZINIT_HOME"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi 
 
+# load zinit
+source "$ZINIT_HOME/zinit.zsh"
+
+# add powerlevel10k theme
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# === zinit plugins ===
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# add in snippets
+zinit snippet OMZP::brew
+zinit snippet OMZP::node
+zinit snippet OMZP::yarn
+
+# load completions
+autoload -U compinit && compinit
+zinit cdreplay -q
+
+# HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+HISTDUP=erase
+setopt append_history
+setopt share_history
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # case-insensitive matching
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # use LS_COLORS
+zstyle ':completion:*' menu no # disable default completion menu
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # cd preview
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # zoxide preview
+
+# === keybindings ===
+# use emacs keybindings
+bindkey -e
+
+# related history search
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward 
+
+# ===  custom config ===
 # brew configuration
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
-
-
-# java sdk path variable
-# may be you need to execute following cmd to make symbolic link
-# sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
-# sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-# export JAVA_HOME_17=$(/usr/libexec/java_home -v 17)
-# export JAVA_HOME_11=$(/usr/libexec/java_home -v 11)
-
-# setup java version
-# export JAVA_HOME=$JAVA_HOME_17
 
 # export custom script path so that we can use custom scripts in any directorys
 export PATH="$HOME/dotfiles/scripts:$PATH"
@@ -43,10 +83,15 @@ export PATH="/opt/homebrew/opt/go/bin:$PATH"
 export PATH=$PATH:$HOME/go/bin
 
 # zoxide configuration
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
+# fzf configuration
+eval "$(fzf --zsh)" # shell integration
 
-# ========================= alias =========================
+# mise configuration
+eval "$(mise activate zsh)"
+
+# === alias ===
 # git
 alias g='git'
 alias gb='git branch'
@@ -87,7 +132,6 @@ alias bl='brew list'
 alias bi='brew install'
 alias bui='brew uninstall'
 
-
 # uv python
 alias uvr="uv run" # run a command or script
 alias py="uv run --no-project"
@@ -95,7 +139,6 @@ alias uvinit="uv init" # create a new project
 alias uva="uv add" # set an alias for uv command
 alias uvd="uv remove" # remove an alias
 alias uvp="uv pip" # install a package
-
 
 # docker
 alias d='docker'
@@ -111,12 +154,10 @@ alias dmysql='docker exec -it mysql-container mysql -u root -p'
 alias dpsql='docker exec -it postgres-container psql -U root'
 
 # Added by Windsurf
-export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
-# mise
-eval "$(mise activate zsh)"
 # Added by Windsurf
-export PATH="/Users/hyzoon/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # vpn function
 function vpn() {
